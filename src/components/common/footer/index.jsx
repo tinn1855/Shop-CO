@@ -12,8 +12,8 @@ export function Footer() {
                     <h2 className="font-bold text-white font-[IntegralCF-Bold] text-4xl w-1/2">
                         STAY UPTO DATE ABOUT OUR LATEST OFFERS
                     </h2>
-                    <div className="w-1/4">
-                        <div className="flex px-4 space-x-1 bg-white py-3 rounded-full">
+                    <div className="w-4/12">
+                        <div className="flex px-6 space-x-1 bg-white py-3 rounded-full">
                             <Mail className="text-gray-500" />
                             <input className="w-full outline-none" type="text" placeholder="Enter your email address" />
                         </div>

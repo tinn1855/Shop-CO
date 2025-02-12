@@ -20,7 +20,7 @@ export function FeedBack() {
     return (
         <div className="flex space-x-5 mt-10">
             {feedbacks.map((feedback, index) => (
-                    <div key={index} className="w-1/3 border rounded-xl px-5 py-5 flex flex-col space-y-3">
+                    <div key={index} className="w-1/3 border-2 border-gray-300 rounded-3xl px-6 py-5 flex flex-col space-y-3">
                         <div className="flex space-x-1">
                             <Star className="text-[#FFC633]" />
                             <Star className="text-[#FFC633]" />

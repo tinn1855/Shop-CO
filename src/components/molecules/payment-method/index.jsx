@@ -9,8 +9,8 @@ export function PaymentMothod() {
     return (
         <div className="flex">
             {paymentMethod.map((payments, index) => (
-                <a href="/">
-                    <img key={index} src={`/images/payment-method/${payments}.png`} alt="" />
+                <a key={index} href="/">
+                    <img  src={`/images/payment-method/${payments}.png`} alt="" />
                 </a>
             ))}
         </div>

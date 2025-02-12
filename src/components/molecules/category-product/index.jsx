@@ -1,10 +1,10 @@
 import { Star } from "lucide-react";
 
-export function Product({product}) {
-    return  (
-        <div className="w-1/4 space-y-1">
-            <div className="bg-[#F0EEED] w-full h-full flex items-center justify-center rounded-xl">
-                <img src={product.image} className="w-44 h-44" alt={product.title} />
+export function CategoryProducts({ product }) {
+    return (
+        <div className="col-span-1 space-y-1">
+            <div className="bg-[#F0EEED] aspect-square flex items-center justify-center rounded-xl">
+                <img src={product.image} className="w-full h-full object-contain" alt={product.title} />
             </div>
             <h3 className="font-bold text-xl line-clamp-2 overflow-hidden text-ellipsis h-14">{product.title}</h3>
             <div className="flex space-x-3 items-center">
@@ -19,5 +19,5 @@ export function Product({product}) {
             </div>
             <p className="font-bold text-2xl">${product.price}</p>
         </div>
-    )
+    );
 }

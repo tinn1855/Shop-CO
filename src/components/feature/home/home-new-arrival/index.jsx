@@ -7,23 +7,24 @@ export function HomeNewArrival() {
     useEffect(() => {
             fetch('https://fakestoreapi.com/products')
                 .then(res => res.json())
-                .then(data => setNewArrivals(data.slice(0,4)))
+                .then(data => setNewArrivals(data.slice(8,12)))
                 .catch(error => console.log('error fetching data:', error))
         },[])
-
-    return <div>
-                <h2 className="font-[IntegralCF-Bold] text-5xl text-center my-14">
-                    NEW ARRIVALS
-                </h2>
-                <div className="flex space-x-4">
-                    {newArrivals.map((product, index) => (
-                        <Product product={product} key={index} />
-                    ))}
-                </div>
-                <div className="flex justify-center mt-40">
-                    <a href="/" className="w-52 text-center py-3 rounded-full border text-medium">
-                        View All
-                    </a>
-                </div>
+    return (
+        <div>
+            <h2 className="font-[IntegralCF-Bold] text-5xl text-center my-14">
+                NEW ARRIVALS
+            </h2>
+            <div className="flex space-x-4">
+                {newArrivals.map((product, index) => (
+                    <Product product={product} key={index} />
+                ))}
+            </div>
+            <div className="flex justify-center mt-40">
+                <a href="/" className="w-52 text-center py-3 rounded-full border text-medium">
+                    View All
+                </a>
+            </div>
         </div>
+    )
 }

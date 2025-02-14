@@ -2,7 +2,7 @@ export function HomeSlider() {
     return  <div className="bg-[#F2F0F1] bg-[url(/images/banner.png)] bg-no-repeat bg-center py-24">
                 <div className="container mx-auto px-5 grid grid-cols-2 gap-24">
                     <div className="col-span-1">
-                        <h1 className="text-6xl font-[IntegralCF-Bold]">
+                        <h1 className="text-[64px] leading-none font-[IntegralCF-Bold] font-bold">
                             FIND CLOTHES THAT MATCHES YOUR STYLE
                         </h1>
                         <p className="mt-5 text-gray-500">

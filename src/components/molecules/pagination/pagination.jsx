@@ -18,10 +18,10 @@ export function Paginations() {
                         <PaginationPrevious href="#" />
                     </PaginationItem>
                     <PaginationItem>
-                        <PaginationLink href="#">1</PaginationLink>
+                        <PaginationLink href="#" className="rounded-lg" isActive>1</PaginationLink>
                     </PaginationItem>
                     <PaginationItem>
-                        <PaginationLink href="#" isActive>
+                        <PaginationLink href="#" >
                             2
                         </PaginationLink>
                     </PaginationItem>

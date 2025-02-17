@@ -1,28 +1,28 @@
 export function HomeSlider() {
-    return  <div className="bg-[#F2F0F1] bg-[url(/images/banner.png)] bg-no-repeat bg-center py-24">
+    return  <div className="bg-[#F2F0F1] bg-[url(/images/banner.png)] bg-no-repeat bg-cover py-[86px]">
                 <div className="container mx-auto px-5 grid grid-cols-2 gap-24">
                     <div className="col-span-1">
-                        <h1 className="text-[64px] leading-none font-[IntegralCF-Bold] font-bold">
+                        <h1 className="text-[64px] leading-none font-[IntegralCF-Bold]  font-bold [text-shadow:_2px_2px_0_rgb(0_0_0_/_50%)]">
                             FIND CLOTHES THAT MATCHES YOUR STYLE
                         </h1>
-                        <p className="mt-5 text-gray-500">
+                        <p className="py-6 text-gray-500 mr-5">
                             Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
                         </p>
-                        <button className="bg-black text-white px-20 py-4 rounded-full mt-5">Shop now</button>
-                        <div className="flex justify-between mt-14">
+                        <button className="bg-black text-white px-[70px] py-3.5 rounded-full">Shop Now</button>
+                        <div className="flex justify-between mt-12">
                             <div className="">
-                                <h1 className="font-bold text-4xl">200+</h1>
-                                <h1>International Brands</h1>
+                                <h1 className="font-bold text-[40px]">200+</h1>
+                                <h1 className="text-gray-600">International Brands</h1>
                             </div>
-                            <div className="border"></div>
+                            <div className="border border-gray-300"></div>
                             <div className="">
-                                <h1 className="font-bold text-4xl">2.000+</h1>
-                                <h1>High-Quality Products</h1>
+                                <h1 className="font-bold text-[40px]">2.000+</h1>
+                                <h1 className="text-gray-600">High-Quality Products</h1>
                             </div>
-                            <div className="border"></div>
+                            <div className="border border-gray-300"></div>
                             <div className="">
-                                <h1 className="font-bold text-4xl">30.000+</h1>
-                                <h1>Happy Customers</h1>
+                                <h1 className="font-bold text-[40px]">30.000+</h1>
+                                <h1 className="text-gray-600">Happy Customers</h1>
                             </div>
                         </div>
                     </div>

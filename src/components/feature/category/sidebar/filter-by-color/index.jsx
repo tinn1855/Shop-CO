@@ -1,4 +1,6 @@
-import { ChevronUp } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/src/components/ui/collapsible";
+import { SidebarGroup, SidebarGroupContent, SidebarGroupLabel } from "@/src/components/ui/sidebar";
+import { ChevronDown } from "lucide-react";
 
 export function FilterByColor() {
     const colors = [
@@ -10,25 +12,36 @@ export function FilterByColor() {
     ]
     return (
         <div>
-            <div className="border-b-2"></div>
-            <div className="flex justify-between items-center mt-4">
-                <h3 className="font-bold text-xl">Colors</h3>
-                <ChevronUp />
-            </div>
-            <div className="flex justify-between mt-5">
-                {colors.map((colors, index) => (
-                    <a  key={index} href="/">
-                        <div className={`${colors.color} col-span-1 rounded-full border-2 w-8 h-8`}>
-                        </div>
-                    </a>
-                )) }
-            </div>
-            <div className="flex justify-between mt-5">
-                {colors.map((colors, index) => (
-                    <div key={index} className={`${colors.color} col-span-1 rounded-full border-2 w-8 h-8`}>
+            <Collapsible defaultOpen className="group/collapsible">
+                <SidebarGroup>
+                <div className="border border-gray-300 mb-5"></div>
+                <SidebarGroupLabel asChild>
+                    <CollapsibleTrigger>
+                    <div className="w-full flex justify-between items-center">
+                        <h3 className="font-bold text-xl text-black">Color</h3>
+                        <ChevronDown className=" text-black  transition-transform group-data-[state=open]/collapsible:rotate-180" />
                     </div>
-                )) }
-            </div>
+                    </CollapsibleTrigger>
+                </SidebarGroupLabel>
+                <CollapsibleContent>
+                    <SidebarGroupContent />
+                    <div className="flex justify-between mt-5">
+                        {colors.map((colors, index) => (
+                            <a  key={index} href="/">
+                                <div className={`${colors.color} col-span-1 rounded-full border-2 w-8 h-8`}>
+                                </div>
+                            </a>
+                        )) }
+                    </div>
+                    <div className="flex justify-between mt-5">
+                        {colors.map((colors, index) => (
+                            <div key={index} className={`${colors.color} col-span-1 rounded-full border-2 w-8 h-8`}>
+                            </div>
+                        )) }
+                    </div>
+                </CollapsibleContent>
+                </SidebarGroup>
+            </Collapsible>
         </div>
     )
 }

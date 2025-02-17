@@ -12,7 +12,6 @@ export function CategoryProduct() {
             .then(data => setCategoryProduct(data))
             .catch(error => console.log("Error fetching data:", error))
     }, [])
-    console.log(categoryProduct)
 
     return (
         <div>

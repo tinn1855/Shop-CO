@@ -32,11 +32,11 @@ export function FeedBack() {
             {feedbacks.map((feedback, index) => (
                     <div key={index} className="w-1/3 border-2 border-gray-300 rounded-3xl px-6 py-5 flex flex-col space-y-3">
                         <div className="flex space-x-1">
-                            <Star className="text-[#FFC633]" />
-                            <Star className="text-[#FFC633]" />
-                            <Star className="text-[#FFC633]" />
-                            <Star className="text-[#FFC633]" />
-                            <Star className="text-[#FFC633]" />
+                            <Star className="fill-[#FFC633]" stroke={1.0} />
+                            <Star className="fill-[#FFC633]" stroke={1.0} />
+                            <Star className="fill-[#FFC633]" stroke={1.0} />
+                            <Star className="fill-[#FFC633]" stroke={1.0} />
+                            <Star className="fill-[#FFC633]" stroke={1.0} />
                         </div>
                         <div className="flex items-center">
                             <h3 className="text-xl font-bold">{feedback.name}</h3>

@@ -9,11 +9,12 @@ export function CategoryProducts({ product }) {
             <h3 className="font-bold text-xl line-clamp-2 overflow-hidden text-ellipsis h-14">{product.title}</h3>
             <div className="flex space-x-3 items-center">
                 <div className="flex space-x-1">
-                    <Star className="text-[#FFC633] w-5"/>
-                    <Star className="text-[#FFC633] w-5"/>
-                    <Star className="text-[#FFC633] w-5"/>
-                    <Star className="text-[#FFC633] w-5"/>
-                    <Star className="text-[#FFC633] w-5"/>   
+                    <Star className="fill-[#FFC633]" stroke={1.0} />
+                    <Star className="fill-[#FFC633]" stroke={1.0} />
+                    <Star className="fill-[#FFC633]" stroke={1.0} />
+                    <Star className="fill-[#FFC633]" stroke={1.0} />
+                    <Star className="fill-[#FFC633]" stroke={1.0} />
+              
                 </div>
                 <span>{product.rating.rate}/5</span>
             </div>

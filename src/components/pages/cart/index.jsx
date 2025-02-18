@@ -11,12 +11,12 @@ export function PageCart() {
                 <ChevronRight strokeWidth={0.75} />
                 <h3>Cart</h3>
             </div>
-            <h3 className="text-[40px] font-[IntegralCF-Bold] mt-5">YOUR CART</h3>
-            <div className="flex gap-5 mt-6">
-                <div className="w-7/12 border px-6 py-5 rounded-3xl">
+            <h3 className="text-3xl lg:text-[40px] font-[IntegralCF-Bold] mt-5">YOUR CART</h3>
+            <div className="flex-col lg:flex-row flex gap-5 mt-6">
+                <div className="w-full lg:w-7/12 border p-3.5 lg:px-6 lg:py-5 rounded-2xl lg:rounded-3xl">
                     <CartProduct />
                 </div>
-                <div className="w-5/12 border px-6 py-5 rounded-3xl">
+                <div className="w-full lg:w-5/12 border p-3.5 lg:px-6 lg:py-5 rounded-2xl lg:rounded-3xl">
                     <OrderSummary />
                 </div>
             </div>

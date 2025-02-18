@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useEffect } from "react"
 import { Product } from "../../../molecules/product"
+import { Button } from "@/src/components/ui/button"
 
 export function HomeTopSelling() {
     const [topSellings, setTopSellings] = useState([])
@@ -13,15 +14,15 @@ export function HomeTopSelling() {
     },[])
     return  <div>
                 <h2 className="text-center text-5xl font-[IntegralCF-Bold]">TOP SELLING</h2>
-                <div className="flex space-x-4 mt-14">
+                <div className="flex gap-5 mt-14">
                     {topSellings.map((product, index) => (
                         <Product product={product} key={index} />
                     ))}
                 </div>
-                <div className="flex justify-center mt-5">
-                    <a href="/" className="w-52 text-center py-3 rounded-full border text-medium">
+                <div className="flex justify-center mt-9">
+                    <Button variant="outline" className=" text-center py-6 w-56 rounded-full border text-medium">
                         View All
-                    </a>
+                    </Button>
                 </div>
             /</div>
 }

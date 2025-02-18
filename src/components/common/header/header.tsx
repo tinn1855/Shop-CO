@@ -34,9 +34,11 @@ export function Header() {
             <div className="sm:hidden">
               <Menu />
             </div>
-            <h1 className="font-[IntegralCF-Bold] font-bold text-[32px]">
-              SHOP.CO
-            </h1>
+            <a href="/">
+              <h1 className="font-[IntegralCF-Bold] font-bold text-[32px]">
+                SHOP.CO
+              </h1>
+            </a>
           </div>
           <ul className="hidden sm:flex justify-between space-x-6">
             <li className="flex items-center ">

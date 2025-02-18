@@ -18,7 +18,7 @@ export function HomeTopSelling() {
                         <Product product={product} key={index} />
                     ))}
                 </div>
-                <div className="flex justify-center mt-40">
+                <div className="flex justify-center mt-5">
                     <a href="/" className="w-52 text-center py-3 rounded-full border text-medium">
                         View All
                     </a>

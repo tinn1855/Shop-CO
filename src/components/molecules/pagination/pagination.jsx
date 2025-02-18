@@ -18,7 +18,7 @@ export function Paginations() {
                         <PaginationPrevious href="#" />
                     </PaginationItem>
                     <PaginationItem>
-                        <PaginationLink href="#" className="rounded-lg" isActive>1</PaginationLink>
+                        <PaginationLink href="#" isActive>1</PaginationLink>
                     </PaginationItem>
                     <PaginationItem>
                         <PaginationLink href="#" >

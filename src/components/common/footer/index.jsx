@@ -31,7 +31,7 @@ export function Footer() {
                         </p>
                         <Social/>
                     </div>
-                    <div className="grid grid-cols-2 gap-5 mt-5 lg:flex lg:w-4/5 justify-between">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-5 lg:mt-0 lg:w-[71%] justify-between">
                         <div className="flex flex-col text-sm lg:text-base space-y-3">
                             <h3 className="font-medium text-base tracking-widest">COMPANY</h3>
                             <a href="/">About</a>

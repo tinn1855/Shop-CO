@@ -26,7 +26,7 @@ export function OrderSummary() {
                 </div>
             </div>
             <div className="flex gap-3">
-                <div className="bg-[#f0f0f0] flex py-3 px-4 rounded-full w-2/3">
+                <div className="bg-[#f0f0f0] flex py-3 px-4 rounded-full w-2/3 lg:w-3/4">
                     <Tag className="opacity-60" />
                     <input type="text" className="bg-[#f0f0f0] outline-none px-2" placeholder="Add promo code" />
                 </div>

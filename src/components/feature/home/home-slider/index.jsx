@@ -1,5 +1,5 @@
 export function HomeSlider() {
-    return  <div className="bg-[#F2F0F1] bg-[url(/images/banner.png)] bg-no-repeat bg-cover py-[86px]">
+    return  <div className="bg-[#F2F0F1] bg-[url(/images/banner.png)] bg-no-repeat bg-cover object-contain py-[86px]">
                 <div className="container mx-auto px-5 grid grid-cols-2 gap-24">
                     <div className="col-span-1">
                         <h1 className="text-[64px] leading-none font-[IntegralCF-Bold]  font-bold [text-shadow:_2px_2px_0_rgb(0_0_0_/_50%)]">

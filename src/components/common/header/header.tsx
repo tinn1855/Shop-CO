@@ -6,6 +6,7 @@ import {
   ShoppingCart,
   X,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function Header() {
   return (
@@ -60,7 +61,9 @@ export function Header() {
             <div className="sm:hidden">
               <Search />
             </div>
-            <ShoppingCart />
+            <Link to="cart">
+              <ShoppingCart />
+            </Link>
             <CircleUserRound className="text-sm" />
           </div>
         </div>

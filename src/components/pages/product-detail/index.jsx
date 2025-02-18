@@ -1,6 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import ProductDetail from "../../feature/product-detail";
 import ProductDetailTabs from "../../molecules/tab";
+import { AlsoLike } from "../../feature/product-detail/also-like";
 
 
 export function PageProductDetail() {
@@ -12,6 +13,7 @@ export function PageProductDetail() {
             </div>
             <ProductDetail/>
             <ProductDetailTabs/>
+            <AlsoLike/>
         </div>
     )
 }

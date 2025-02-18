@@ -1,4 +1,4 @@
-import { FeedBack } from "@/src/components/molecules/feedback";
+import { FeedBackProductDetail } from "@/src/components/molecules/feedback-product-detail";
 import { Button } from "@/src/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/src/components/ui/select";
 import { SlidersHorizontal } from "lucide-react";
@@ -31,7 +31,7 @@ export function TabRating() {
                         <Button className="rounded-full py-6 font-medium">Write a Review</Button>
                     </div>
                 </div>
-                <FeedBack feedback = {f}/>
+                <FeedBackProductDetail/>
         </div>
     )
 }

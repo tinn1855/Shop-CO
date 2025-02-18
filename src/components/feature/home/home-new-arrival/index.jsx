@@ -5,11 +5,11 @@ import { Product } from "../../../molecules/product"
 export function HomeNewArrival() {
     const [newArrivals, setNewArrivals] = useState([])
     useEffect(() => {
-            fetch('https://fakestoreapi.com/products')
-                .then(res => res.json())
-                .then(data => setNewArrivals(data.slice(8,12)))
-                .catch(error => console.log('error fetching data:', error))
-        },[])
+        fetch('https://fakestoreapi.com/products')
+            .then(res => res.json())
+            .then(data => setNewArrivals(data.slice(8,12)))
+            .catch(error => console.log('error fetching data:', error))
+    },[])
     return (
         <div>
             <h2 className="font-[IntegralCF-Bold] text-5xl text-center my-14">

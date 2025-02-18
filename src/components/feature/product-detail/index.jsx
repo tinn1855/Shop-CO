@@ -26,7 +26,13 @@ export default function ProductDetail() {
         if (quantity > 1)
             setQuantity(quantity - 1);
         
-        };
+    };
+    const handleQuantityChange = (e) => {
+        const value = parseInt(e.target.value, 10);
+        if (!isNaN(value) && value >= 1) {
+          setQuantity(value);
+        }
+    };
     const handleColorClick = (id) => {
         setSelectedColor((prev) => (prev === id ? null : id))
     }
@@ -129,7 +135,7 @@ export default function ProductDetail() {
                     <button onClick={handleDecrease}>
                         <Minus/>
                     </button>
-                    <input type="text" value={quantity} className="outline-none w-1/4 bg-[#F0f0f0] text-center font-semibold" />
+                    <input type="text" onChange={handleQuantityChange} value={quantity} className="outline-none w-1/4 bg-[#F0f0f0] text-center font-semibold" />
                     <button onClick={handleIncrease}>
                         <Plus />
                     </button>

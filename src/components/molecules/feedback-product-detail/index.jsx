@@ -1,6 +1,7 @@
-import { Star } from "lucide-react";
+import { Star } from "lucide-react"
+import { Button } from "../../ui/button"
 
-export function FeedBack() {
+export function FeedBackProductDetail() {
     const feedbacks = [
         {
             "id": 1,
@@ -28,9 +29,10 @@ export function FeedBack() {
         }
     ]
     return (
-        <div className="flex space-x-5 mt-10">
+        <div>
+            <div className="grid grid-cols-2 gap-5 mt-10">
             {feedbacks.map((feedback, index) => (
-                    <div key={index} className="w-1/3 border-2 border-gray-300 rounded-3xl px-6 py-5 flex flex-col space-y-3">
+                    <div key={index} className="col-span-1 border-2 border-gray-300 rounded-3xl px-8 py-7 flex flex-col space-y-3">
                         <div className="flex space-x-1">
                             <Star className="text-[#FFC633]" />
                             <Star className="text-[#FFC633]" />
@@ -42,11 +44,16 @@ export function FeedBack() {
                             <h3 className="text-xl font-bold">{feedback.name}</h3>
                             <img src="/images/check.png" alt="" />
                         </div>
-                        <p>
+                        <p className="opacity-60">
                             "{feedback.description}"
                         </p>
+                        <span className="font-medium opacity-60 pt-3">Posted on {feedback.dayPost}</span>
                     </div>
-                )).slice(0,3)}
+                ))}
+            </div>
+            <div className="flex justify-center font-medium">
+                <Button variant="outline" className="rounded-full mt-9 py-6 px-12 ">Load More Reviews</Button>
+            </div>
         </div>
     )
 }

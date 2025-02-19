@@ -55,14 +55,14 @@ export default function ProductDetail() {
 
   return (
     <div className="container mx-auto flex gap-10">
-      <div className="w-1/2 flex gap-4">
+      <div className="w-1/2 grid grid-cols-4 gap-3.5">
         {/* Thumbnail Images */}
-        <div className="flex flex-col gap-4 ">
+        <div className="col-span-1 grid grid-rows-3 gap-3.5">
             {thumbnails.map((thumb, index) => (
             <button
                 key={index}
                 className={cn(
-                "w-32 h-32 border rounded-xl overflow-hidden flex items-center justify-center bg-[#F0F0F0]",
+                "border rounded-xl overflow-hidden flex items-center justify-center bg-[#F0F0F0]",
                 selectedImage === index ? "border-black" : "border-gray-200"
                 )}
                 onChange={() => setSelectedImage(index)}
@@ -70,21 +70,21 @@ export default function ProductDetail() {
                 <img
                 src={thumb}
                 alt={`Thumbnail ${index + 1}`}
-                className="object-contain w-full h-full"
+                className="object-contain"
                 />
             </button>
             ))}
         </div>
-        <div className="object-contain bg-[#F0F0F0] rounded-3xl">
+        <div className="col-span-3 bg-[#F0F0F0] rounded-3xl flex justify-center items-center">
             <img
                 src={thumbnails[selectedImage]}
                 alt={product.title}
-                className="object-contain w-full h-full"
+                className="object-cover"
             />
         </div>
       </div>
       <div className="w-1/2 flex flex-col space-y-2">
-            <h2 className="text-5xl font-bold font-[IntegralCF-Bold]">
+            <h2 className="text-5xl font-bold font-[IntegralCF-Bold] line-clamp-1">
                 {product.title}
             </h2>
             <span>{product.rating.rate}/5</span>
@@ -93,12 +93,12 @@ export default function ProductDetail() {
                 <del className="text-[32px] font-bold text-gray-500">${product.price}</del>
                 <h3 className="text-red-500 bg-red-200 px-4 py-1.5 rounded-full">-40%</h3>
             </div>
-            <p>
+            <p className="line-clamp-2">
                 {product.description}
             </p>
-            <div className="border-b border-gray-300 pt-4"></div>
+            <div className="border-b border-gray-300 pt-3.5"></div>
             <div className="" >
-                <h3 className="my-4">Select Color</h3>
+                <h3 className="my-3">Select Color</h3>
                 <div className="flex gap-4">
                     {colors.map((color) => (
                         <button 
@@ -111,9 +111,9 @@ export default function ProductDetail() {
                     ))}
                 </div>
             </div>
-            <div className="border-b border-gray-300 pt-4"></div>
+            <div className="border-b border-gray-300 pt-3.5"></div>
             <div className="">
-                <h3 className="my-4">Choose Size</h3>
+                <h3 className="my-3">Choose Size</h3>
                 <div className="flex gap-2">
                 {sizes.map((size) => (
                     <button
@@ -129,8 +129,8 @@ export default function ProductDetail() {
                 ))}
                 </div>
             </div>
-            <div className="border-b border-gray-300 pt-4"></div>
-            <div className="flex justify-between gap-2 pt-4">
+            <div className="border-b border-gray-300 pt-3.5"></div>
+            <div className="flex justify-between gap-2 pt-3">
                 <div className="w-[30%] bg-[#F0F0F0] rounded-full flex px-5 justify-between">
                     <button onClick={handleDecrease}>
                         <Minus/>

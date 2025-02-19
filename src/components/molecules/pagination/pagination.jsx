@@ -18,7 +18,7 @@ export function Paginations() {
                         <PaginationPrevious href="#" />
                     </PaginationItem>
                     <PaginationItem>
-                        <PaginationLink href="#" isActive>1</PaginationLink>
+                        <PaginationLink href="#" className="" isActive>1</PaginationLink>
                     </PaginationItem>
                     <PaginationItem>
                         <PaginationLink href="#" >
@@ -26,10 +26,10 @@ export function Paginations() {
                         </PaginationLink>
                     </PaginationItem>
                     <PaginationItem>
-                        <PaginationLink href="#">3</PaginationLink>
+                        <PaginationEllipsis />
                     </PaginationItem>
                     <PaginationItem>
-                        <PaginationEllipsis />
+                        <PaginationLink href="#">10</PaginationLink>
                     </PaginationItem>
                     <PaginationItem>
                         <PaginationNext href="#" />

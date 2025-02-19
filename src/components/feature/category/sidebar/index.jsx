@@ -7,7 +7,7 @@ import { FilterByStyle } from "./filter-by-style";
 
 export function Sidebar() {
     return (
-        <div className="col-span-1 border border-gray-300 rounded-xl px-6 py-5 space-y-8">
+        <div className="hidden lg:block col-span-1 border border-gray-300 rounded-xl px-6 py-5 space-y-8">
             <SidebarFilter/>
             <FilterByPrice/>
             <FilterByColor/>

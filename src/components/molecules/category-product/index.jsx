@@ -1,11 +1,12 @@
 import { Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function CategoryProducts({ product }) {
     return (
         <div className="col-span-1 space-y-1">
-            <div className="bg-[#F0EEED] aspect-square flex items-center justify-center rounded-xl">
+            <Link to={`/product/${product.id}`} className="bg-[#F0EEED] aspect-square flex items-center justify-center rounded-xl">
                 <img src={product.image} className="w-full h-full object-contain" alt={product.title} />
-            </div>
+            </Link>
             <h3 className="font-bold text-xl line-clamp-2 overflow-hidden text-ellipsis h-14">{product.title}</h3>
             <div className="flex space-x-3 items-center">
                 <div className="flex space-x-1">

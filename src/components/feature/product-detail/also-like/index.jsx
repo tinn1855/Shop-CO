@@ -10,7 +10,7 @@ export function AlsoLike() {
             .then(res => res.json())
             .then(data => setAlsoLike(data))
             .catch(error => console.log("Error fetching data: ", error))
-    })
+    },[])
 
     return (
         <div className="">

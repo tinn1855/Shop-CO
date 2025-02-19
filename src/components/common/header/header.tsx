@@ -7,8 +7,16 @@ import {
   X,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '../../ui/dropdown-menu';
+import { useState } from 'react';
 
 export function Header() {
+  const [open, setOpen] = useState(false);
   return (
     <div>
       <div className="bg-black py-1.5 lg:py-[7px]">
@@ -29,22 +37,35 @@ export function Header() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-5 py-6">
+      <div className="container mx-auto px-4 lg:px-5 py-6">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center ">
             <div className="lg:hidden">
               <Menu />
             </div>
             <a href="/">
-              <h1 className="font-[IntegralCF-Bold] font-bold text-[32px]">
-                SHOP.CO
-              </h1>
+              <h1 className="font-[IntegralCF-Bold] text-[32px]">SHOP.CO</h1>
             </a>
           </div>
           <ul className="hidden lg:flex justify-between space-x-6">
-            <li className="flex items-center ">
-              Shop <ChevronDown className="text-sm" />
-            </li>
+            <DropdownMenu open={open} onOpenChange={setOpen}>
+              <DropdownMenuTrigger
+                onMouseEnter={() => setOpen(true)}
+                onMouseLeave={() => setOpen(false)}
+                className="flex items-center outline-none"
+              >
+                Shop <ChevronDown className="text-sm" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                onMouseEnter={() => setOpen(true)}
+                onMouseLeave={() => setOpen(false)}
+              >
+                <DropdownMenuItem>Casual</DropdownMenuItem>
+                <DropdownMenuItem>Gym</DropdownMenuItem>
+                <DropdownMenuItem>Party</DropdownMenuItem>
+                <DropdownMenuItem>Formal</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <li>On Sale</li>
             <li>New Arrivals</li>
             <li>Brands</li>

@@ -1,11 +1,11 @@
 export function HomeSlider() {
-    return  <div className="bg-[#F2F0F1] bg-[url(/images/banner.png)] bg-no-repeat bg-cover object-contain py-[86px]">
+    return  <div className="bg-[#F2F0F1] bg-[url(/images/banner.png)] bg-no-repeat bg-cover py-24">
                 <div className="container mx-auto px-5 grid grid-cols-2 gap-24">
                     <div className="col-span-1">
                         <h1 className="text-[64px] leading-none font-[IntegralCF-Bold]  font-bold [text-shadow:_2px_2px_0_rgb(0_0_0_/_50%)]">
                             FIND CLOTHES THAT MATCHES YOUR STYLE
                         </h1>
-                        <p className="py-6 text-gray-500 mr-5">
+                        <p className="py-8 text-gray-500 mr-5">
                             Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
                         </p>
                         <button className="bg-black text-white px-[70px] py-3.5 rounded-full">Shop Now</button>

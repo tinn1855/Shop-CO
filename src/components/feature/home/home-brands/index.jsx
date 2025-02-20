@@ -8,9 +8,9 @@ export function HomeBrands() {
         ]
         
     return  <div className="bg-black py-8">
-                <div className="container mx-auto px-5 flex justify-between items-center text-white">
+                <div className="container mx-auto px-4 lg:px-5 flex flex-wrap justify-center gap-x-8 gap-y-5 lg:justify-between items-center">
                 {brands.map((brand, index) => (
-                        <img className="h-full" key={index} src={`/images/brands/${brand}.png`} alt={`${brand} logo`} />
+                        <img className="w-auto" key={index} src={`/images/brands/${brand}.png`} alt={`${brand} logo`} />
                 ))}
                 </div>
             </div>

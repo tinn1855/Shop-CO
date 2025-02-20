@@ -1,4 +1,5 @@
 import { Product } from "@/src/components/molecules/product"
+import { Carousel, CarouselContent, CarouselItem } from "@/src/components/ui/carousel"
 import { useEffect } from "react"
 import { useState } from "react"
 
@@ -18,9 +19,16 @@ export function AlsoLike() {
                 YOU MIGHT ALSO LIKE
             </h2>
             <div className="flex gap-5 mb-20">
-                {alsoLike.map((product, index) => (
-                    <Product product={product} key={index} />
-                )).slice(0,4)}
+                <Carousel>
+                    <CarouselContent>
+                        {alsoLike.map((product, index) => (
+                            <CarouselItem className="basis-1/4">
+                                <Product product={product} key={index} />
+                            </CarouselItem>
+                        )).slice(0,4)}
+                    </CarouselContent>
+                </Carousel>
+                
             </div>
         </div>
     )

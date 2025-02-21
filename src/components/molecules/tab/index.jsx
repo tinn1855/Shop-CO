@@ -8,11 +8,11 @@ import { TabFAQs } from '../../feature/product-detail/tabs/tab-faqs';
 const ProductDetailTabs = () => {
   return (
     <div>
-        <Tabs defaultValue="rating" className="mt-20">
-            <TabsList className='w-full text-xl mb-7'>
-                <TabsTrigger className='w-1/3' value="productdetails">Product Details</TabsTrigger>
-                <TabsTrigger className='w-1/3' value="rating">Rating & Reviews</TabsTrigger>
-                <TabsTrigger className='w-1/3' value="faqs">FAQs</TabsTrigger>
+        <Tabs defaultValue="rating" className="mt-14 lg:mt-20">
+            <TabsList className='w-full lg:text-xl mb-5 lg:mb-7'>
+                <TabsTrigger className='w-full pr-5 lg:w-1/3' value="productdetails">Product Details</TabsTrigger>
+                <TabsTrigger className='w-full pr-5 lg:w-1/3' value="rating">Rating & Reviews</TabsTrigger>
+                <TabsTrigger className='w-full lg:w-1/3' value="faqs">FAQs</TabsTrigger>
             </TabsList>
             <TabsContent value="productdetails">
                 <TabProductDetail/>

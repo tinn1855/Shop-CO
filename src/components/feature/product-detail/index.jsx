@@ -54,10 +54,10 @@ export default function ProductDetail() {
   const thumbnails = [product.image, product.image, product.image];
 
   return (
-    <div className="container mx-auto flex gap-10">
-      <div className="w-1/2 grid grid-cols-4 gap-3.5">
+    <div className="lg:flex lg:gap-10">
+      <div className="lg:w-1/2 grid lg:grid-cols-4 gap-3 lg:gap-3.5">
         {/* Thumbnail Images */}
-        <div className="col-span-1 grid grid-rows-3 gap-3.5">
+        <div className="col-span-1 hidden lg:grid grid-rows-3 gap-3.5">
             {thumbnails.map((thumb, index) => (
             <button
                 key={index}
@@ -75,25 +75,43 @@ export default function ProductDetail() {
             </button>
             ))}
         </div>
-        <div className="col-span-3 bg-[#F0F0F0] rounded-3xl flex justify-center items-center">
+        <div className="lg:col-span-3 bg-[#F0F0F0] rounded-3xl flex justify-center items-center">
             <img
                 src={thumbnails[selectedImage]}
                 alt={product.title}
-                className="object-cover"
+                className="object-contain h-full"
             />
         </div>
+        <div className="lg:hidden grid grid-cols-3 gap-3 lg:gap-3.5">
+            {thumbnails.map((thumb, index) => (
+            <button
+                key={index}
+                className={cn(
+                "border rounded-xl overflow-hidden flex items-center justify-center bg-[#F0F0F0]",
+                selectedImage === index ? "border-black" : "border-gray-200"
+                )}
+                onChange={() => setSelectedImage(index)}
+            >
+                <img
+                src={thumb}
+                alt={`Thumbnail ${index + 1}`}
+                className="object-contain"
+                />
+            </button>
+            ))}
+        </div>
       </div>
-      <div className="w-1/2 flex flex-col space-y-2">
-            <h2 className="text-5xl font-bold font-[IntegralCF-Bold] line-clamp-1">
+      <div className="lg:w-1/2 flex flex-col space-y-2">
+            <h2 className="text-2xl lg:text-5xl font-bold font-[IntegralCF-Bold] line-clamp-2">
                 {product.title}
             </h2>
-            <span>{product.rating.rate}/5</span>
+            <span className="text-sm">{product.rating.rate}/5</span>
             <div className="flex gap-3 items-center">
-                <h3 className="text-[32px] font-bold">${product.price}</h3>
-                <del className="text-[32px] font-bold text-gray-500">${product.price}</del>
+                <h3 className="text-2xl lg:text-[32px] font-bold">${product.price}</h3>
+                <del className="text-2xl lg:text-[32px] font-bold text-gray-500">${product.price}</del>
                 <h3 className="text-red-500 bg-red-200 px-4 py-1.5 rounded-full">-40%</h3>
             </div>
-            <p className="line-clamp-2">
+            <p className="line-clamp-3 text-sm">
                 {product.description}
             </p>
             <div className="border-b border-gray-300 pt-3.5"></div>
@@ -131,7 +149,7 @@ export default function ProductDetail() {
             </div>
             <div className="border-b border-gray-300 pt-3.5"></div>
             <div className="flex justify-between gap-2 pt-3">
-                <div className="w-[30%] bg-[#F0F0F0] rounded-full flex px-5 justify-between">
+                <div className="w-[30%] bg-[#F0F0F0] rounded-full flex px-3 lg:px-5 justify-between">
                     <button onClick={handleDecrease}>
                         <Minus/>
                     </button>
@@ -140,7 +158,7 @@ export default function ProductDetail() {
                         <Plus />
                     </button>
                 </div>
-                <Button className="rounded-full w-2/3 py-6">Add to cart</Button>
+                <Button className="rounded-full w-2/3 py-[22px] lg:py-6">Add to cart</Button>
             </div>
       </div>
     </div>

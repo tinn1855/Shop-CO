@@ -30,9 +30,9 @@ export function FeedBackProductDetail() {
     ]
     return (
         <div>
-            <div className="grid grid-cols-2 gap-5 mt-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5 mt-5 lg:mt-10">
             {feedbacks.map((feedback, index) => (
-                    <div key={index} className="col-span-1 border-2 border-gray-300 rounded-3xl px-8 py-7 flex flex-col space-y-3">
+                    <div key={index} className="col-span-1 border-2 border-gray-300 rounded-3xl p-6 lg:px-8 lg:py-7 flex flex-col space-y-3">
                         <div className="flex space-x-1">
                             <Star className="text-[#FFC633]" />
                             <Star className="text-[#FFC633]" />
@@ -51,8 +51,8 @@ export function FeedBackProductDetail() {
                     </div>
                 ))}
             </div>
-            <div className="flex justify-center font-medium">
-                <Button variant="outline" className="rounded-full mt-9 py-6 px-12 ">Load More Reviews</Button>
+            <div className="flex justify-center text-sm lg:text-base font-medium">
+                <Button variant="outline" className="rounded-full mt-9 py-6 px-10 lg:px-12">Load More Reviews</Button>
             </div>
         </div>
     )

@@ -31,11 +31,12 @@ export function CategoryProduct() {
                     <SlidersHorizontal className="w-4 h-4" />
                 </div>
             </div>
-            <div className="grid lg:grid-cols-3 grid-cols-2 gap-2 gap-y-7 lg:gap-4 mt-3 lg:mt-5">
+            <div className="grid lg:grid-cols-3 grid-cols-2 gap-x-3.5 gap-y-6 lg:gap-4 mt-9 lg:mt-5">
                 {categoryProduct.map((product, index) => (
                     <CategoryProducts product={product} key={index}/>
                 ))}
             </div>
+            <div className="border-b mt-6 w-full"></div>
             <Paginations/>
         </div>
     )

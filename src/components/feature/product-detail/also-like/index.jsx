@@ -15,10 +15,10 @@ export function AlsoLike() {
 
     return (
         <div className="">
-            <h2 className="font-[IntegralCF-Bold] text-5xl text-center my-14">
+            <h2 className="font-[IntegralCF-Bold] text-[32px] leading-tight lg:text-5xl text-center my-10 lg:my-14">
                 YOU MIGHT ALSO LIKE
             </h2>
-            <div className="flex gap-5 mb-20">
+            <div className="flex gap-4 lg:gap-5 mb-20 overflow-hidden">
                 <Carousel>
                     <CarouselContent>
                         {alsoLike.map((product, index) => (

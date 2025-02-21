@@ -11,7 +11,7 @@ import {
 
 export function Paginations() {
     return (
-        <div className="text-black">
+        <div className="mt-5 w-full flex justify-between">
             <Pagination>
                 <PaginationContent>
                     <PaginationItem>

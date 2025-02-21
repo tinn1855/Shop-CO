@@ -7,7 +7,7 @@ export function HomeFeedback() {
     return (
         <div className="container mx-auto px-5 mt-10">
             <div className="flex justify-between items-end">
-                <h2 className="font-[IntegralCF-Bold] text-5xl h-full self-end">OUR HAPPY CUSTOMERS</h2>
+                <h2 className="font-[IntegralCF-Bold] text-[32px] leading-tight lg:text-5xl h-full self-end">OUR HAPPY CUSTOMERS</h2>
                 <div className="flex items-end space-x-5">
                     <a href="/"><ArrowLeft /></a>
                     <a href="/"><ArrowRight /></a>

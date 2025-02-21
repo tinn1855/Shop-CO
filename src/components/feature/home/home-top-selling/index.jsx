@@ -32,6 +32,6 @@ export function HomeTopSelling() {
                     View All
                 </Button>
             </div>
-        /</div>
+        </div>
     )
 }

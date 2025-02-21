@@ -9,7 +9,7 @@ export function PageHome() {
     return <>
         <HomeSlider />
         <HomeBrands />
-        <div className="container mx-auto px-5 mt-16">                
+        <div className="container mx-auto px-5 mt-4 lg:mt-16">                
             <HomeNewArrival />
             <div className="border-b my-10"></div>
             <HomeTopSelling />

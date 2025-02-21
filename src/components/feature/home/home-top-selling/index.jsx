@@ -18,7 +18,7 @@ export function HomeTopSelling() {
             <h2 className="text-center text-3xl lg:text-5xl font-[IntegralCF-Bold]">TOP SELLING</h2>
             <div className="flex mt-14 overflow-hidden">
                 <Carousel>
-                    <CarouselContent className="">
+                    <CarouselContent>
                         {topSellings.map((product, index) => (
                             <CarouselItem className="basis-1/4">
                                 <Product product={product} key={index} />

@@ -1,3 +1,5 @@
+import { Button } from "@/src/components/ui/button";
+
 export function HomeSlider() {
     return  <div className="bg-[#F2F0F1] bg-[url(/images/banner.png)] bg-no-repeat bg-cover py-10 lg:py-24">
                 <div className="container mx-auto px-5 lg:grid grid-cols-2 gap-24">
@@ -8,7 +10,7 @@ export function HomeSlider() {
                         <p className="py-5 lg:py-8 text-gray-500 mr-5">
                             Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
                         </p>
-                        <button className="bg-black text-white w-full lg:w-2/5 py-3.5 rounded-full">Shop Now</button>
+                        <Button className="w-full lg:w-2/5 rounded-full py-[26px]">Shop Now</Button>
                         <div className="flex flex-wrap justify-center lg:justify-between gap-4 mt-5 lg:mt-12">
                             <div className="">
                                 <h1 className="font-bold text-2xl lg:text-[40px]">200+</h1>
@@ -19,7 +21,7 @@ export function HomeSlider() {
                                 <h1 className="font-bold text-2xl lg:text-[40px]">2.000+</h1>
                                 <h1 className="text-gray-600 text-xs lg:text-base">High-Quality Products</h1>
                             </div>
-                            <div className="hidden lg:border border-gray-300"></div>
+                            <div className="hidden lg:block lg:border border-gray-300"></div>
                             <div className="">
                                 <h1 className="font-bold text-2xl lg:text-[40px]">30.000+</h1>
                                 <h1 className="text-gray-600 text-xs lg:text-base">Happy Customers</h1>

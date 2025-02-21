@@ -21,9 +21,9 @@ export function HomeNewArrival() {
                 <Carousel>
                     <CarouselContent>
                         {newArrivals.map((product, index) => (
-                        <CarouselItem className="basis-1/4">
-                            <Product product={product} key={index} />
-                        </CarouselItem>
+                            <CarouselItem className="basis-1/4 grow">
+                                <Product product={product} key={index} />
+                            </CarouselItem>
                         ))}
                     </CarouselContent>
                 </Carousel>

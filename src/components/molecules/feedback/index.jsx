@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem } from "../../ui/carousel";
 
 export function FeedBack() {
     const feedbacks = [
@@ -28,25 +29,31 @@ export function FeedBack() {
         }
     ]
     return (
-        <div className="flex space-x-5 mt-10">
-            {feedbacks.map((feedback, index) => (
-                    <div key={index} className="w-1/3 border-2 border-gray-300 rounded-3xl px-6 py-5 flex flex-col space-y-3">
-                        <div className="flex space-x-1">
-                            <Star className="fill-[#FFC633]" stroke={1.0} />
-                            <Star className="fill-[#FFC633]" stroke={1.0} />
-                            <Star className="fill-[#FFC633]" stroke={1.0} />
-                            <Star className="fill-[#FFC633]" stroke={1.0} />
-                            <Star className="fill-[#FFC633]" stroke={1.0} />
-                        </div>
-                        <div className="flex items-center">
-                            <h3 className="text-xl font-bold">{feedback.name}</h3>
-                            <img src="/images/check.png" alt="" />
-                        </div>
-                        <p>
-                            "{feedback.description}"
-                        </p>
-                    </div>
-                )).slice(0,3)}
+        <div className="mt-10">    
+            <Carousel>
+                <CarouselContent>
+                    {feedbacks.map((feedback, index) => (
+                        <CarouselItem className="basis-1/3">
+                            <div key={index} className="border border-gray-300 rounded-3xl px-8 py-7 flex flex-col h-full space-y-3">
+                                <div className="flex space-x-1">
+                                    <Star className="fill-[#FFC633]" stroke={1.0} />
+                                    <Star className="fill-[#FFC633]" stroke={1.0} />
+                                    <Star className="fill-[#FFC633]" stroke={1.0} />
+                                    <Star className="fill-[#FFC633]" stroke={1.0} />
+                                    <Star className="fill-[#FFC633]" stroke={1.0} />
+                                </div>
+                                <div className="flex items-center">
+                                    <h3 className="text-xl font-bold">{feedback.name}</h3>
+                                    <img src="/images/check.png" alt="" />
+                                </div>
+                                <p>
+                                    "{feedback.description}"
+                                </p>
+                            </div>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+            </Carousel>
         </div>
     )
 }

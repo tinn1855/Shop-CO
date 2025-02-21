@@ -8,7 +8,7 @@ export function Product({product}) {
                 <img src={product.image} className="object-contain h-full" alt={product.title} />
             </Link>
             <h3 className="font-bold text-xl line-clamp-1 lg:line-clamp-2 overflow-hidden text-ellipsis lg:h-14">{product.title}</h3>
-            <div className="flex space-x-3 items-center">
+            <div className="flex space-x-3 items-center flex-wrap">
                 <div className="flex space-x-1">
                     <Star className="fill-[#FFC633]" stroke={1.0} />
                     <Star className="fill-[#FFC633]" stroke={1.0} />

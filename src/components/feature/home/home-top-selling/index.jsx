@@ -8,7 +8,7 @@ export function HomeTopSelling() {
     const [topSellings, setTopSellings] = useState([])
     
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products?limit=7')
+        fetch('https://fakestoreapi.com/products?limit=6')
             .then(res => res.json())
             .then(data => setTopSellings(data))
             .catch(error => console.log('error fetching data:', error))

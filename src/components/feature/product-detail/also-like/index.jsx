@@ -18,17 +18,16 @@ export function AlsoLike() {
             <h2 className="font-[IntegralCF-Bold] text-[32px] leading-tight lg:text-5xl text-center my-10 lg:my-14">
                 YOU MIGHT ALSO LIKE
             </h2>
-            <div className="flex gap-4 lg:gap-5 mb-20 overflow-hidden">
+            <div className="flex gap-4 lg:gap-5 mb-12 lg:mb-20 overflow-hidden">
                 <Carousel>
                     <CarouselContent>
                         {alsoLike.map((product, index) => (
-                            <CarouselItem className="basis-1/4">
+                            <CarouselItem className="basis-1/2 lg:basis-1/4">
                                 <Product product={product} key={index} />
                             </CarouselItem>
                         )).slice(0,4)}
                     </CarouselContent>
-                </Carousel>
-                
+                </Carousel>     
             </div>
         </div>
     )

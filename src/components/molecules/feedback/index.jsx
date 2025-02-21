@@ -33,8 +33,8 @@ export function FeedBack() {
             <Carousel>
                 <CarouselContent>
                     {feedbacks.map((feedback, index) => (
-                        <CarouselItem className="lg:basis-1/3">
-                            <div key={index} className="border border-gray-300 rounded-3xl p-6 lg:px-8 lg:py-7 flex flex-col h-full space-y-3">
+                        <CarouselItem key={index} className="lg:basis-1/3">
+                            <div className="border border-gray-300 rounded-3xl p-6 lg:px-8 lg:py-7 flex flex-col h-full space-y-3">
                                 <div className="flex space-x-1">
                                     <Star className="fill-[#FFC633]" stroke={1.0} />
                                     <Star className="fill-[#FFC633]" stroke={1.0} />

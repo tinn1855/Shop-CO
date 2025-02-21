@@ -158,7 +158,11 @@ export default function ProductDetail() {
                         <Plus />
                     </button>
                 </div>
-                <Button className="rounded-full w-2/3 py-[22px] lg:py-6">Add to cart</Button>
+                <Button 
+                    className="rounded-full w-2/3 py-[22px] lg:py-6"
+                >
+                    Add to cart
+                </Button>
             </div>
       </div>
     </div>

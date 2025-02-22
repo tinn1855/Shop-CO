@@ -16,17 +16,15 @@ export function HomeTopSelling() {
     return (
         <div>
             <h2 className="text-center text-3xl lg:text-5xl font-[IntegralCF-Bold]">TOP SELLING</h2>
-            <div className="flex mt-14 overflow-hidden">
-                <Carousel>
-                    <CarouselContent>
-                        {topSellings.map((product, index) => (
-                            <CarouselItem className="basis-1/4">
-                                <Product product={product} key={index} />
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                </Carousel>
-            </div>
+            <Carousel className="overflow-hidden mt-14">
+                <CarouselContent>
+                    {topSellings.map((product, index) => (
+                        <CarouselItem key={index} className="basis-1/2 lg:basis-1/4">
+                            <Product product={product} />
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+            </Carousel>
             <div className="flex justify-center mt-9">
                 <Button variant="outline" className=" text-center py-6 w-56 rounded-full border text-medium">
                     View All

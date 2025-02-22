@@ -9,25 +9,24 @@ export function HomeNewArrival() {
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
             .then(res => res.json())
-            .then(data => setNewArrivals(data.slice(8,14)))
+            .then(data => setNewArrivals(data))
             .catch(error => console.log('error fetching data:', error))
     },[])
+    console.log(newArrivals)
     return (
-        <div>
+        <div className="">
             <h2 className="font-[IntegralCF-Bold] text-3xl lg:text-5xl text-center my-8 lg:my-14">
                 NEW ARRIVALS
             </h2>
-            <div className="flex  gap-4 lg:gap-5 overflow-hidden">
-                <Carousel>
-                    <CarouselContent>
-                        {newArrivals.map((product, index) => (
-                            <CarouselItem className="basis-1/4">
-                                <Product product={product} key={index} />
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                </Carousel>
-            </div>
+            <Carousel className="overflow-hidden">
+                <CarouselContent>
+                    {newArrivals.map((product, index) => (
+                        <CarouselItem key={index} className="basis-1/2 lg:basis-1/4">
+                            <Product product={product} />
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+            </Carousel>
             <div className="flex justify-center mt-9">
                 <Button variant="outline" className=" text-center py-6 w-56 rounded-full border text-medium">
                     View All

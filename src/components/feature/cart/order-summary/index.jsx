@@ -27,12 +27,12 @@ export function OrderSummary() {
             </div>
             <div className="flex gap-3">
                 <div className="bg-[#f0f0f0] flex py-3 px-4 rounded-full w-2/3 lg:w-3/4">
-                    <Tag className="opacity-60" />
-                    <input type="text" className="bg-[#f0f0f0] outline-none px-2" placeholder="Add promo code" />
+                    <Tag className="opacity-60"/>
+                    <input type="text" className="bg-[#f0f0f0] outline-none w-full px-2 text-sm lg:text-base" placeholder="Add promo code" />
                 </div>
                 <Button className="w-1/3 lg:w-1/4 rounded-full py-6 px-4">Apply</Button>
             </div>
-            <Button className="rounded-full py-6">Go to Checkout <ArrowRight size={24} /></Button>
+            <Button className="rounded-full py-6 mt-2 lg:mt-0">Go to Checkout <ArrowRight size={24} /></Button>
         </div>
     )
 }

@@ -19,7 +19,7 @@ export function MainMenu() {
       <DropdownMenuTrigger
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
-        className="flex items-center outline-none"
+        className="flex items-center"
       >
         Shop <ChevronDown className="text-sm" />
       </DropdownMenuTrigger>

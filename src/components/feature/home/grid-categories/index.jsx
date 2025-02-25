@@ -1,10 +1,12 @@
+import { Heading } from "@/src/components/ui/heading";
+
 export function GridCategories() {
     return  (
         <div className="container mx-auto px-4 lg:px-5">
             <div className="bg-[#F0F0F0] py-6 lg:py-12 rounded-3xl mt-10 container mx-auto px-6 lg:px-14">
-                <h2 className="text-center text-[32px] lg:text-5xl font-[IntegralCF-Bold] lg:mt-5">
+                <Heading className="lg:mt-5">
                     BROWSE BY dress STYLE
-                </h2>
+                </Heading>
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-5 mt-7 lg:mt-14">
                     <div className="lg:col-span-2 w-full h-48 lg:h-72 overflow-hidden relative z-10 rounded-xl">
                         <h2 className="relative z-10 text-2xl lg:text-4xl font-bold px-9 py-6">Casual</h2>

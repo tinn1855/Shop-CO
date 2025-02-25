@@ -15,7 +15,7 @@ export function HomeNewArrival() {
     },[])
     return (
         <div className="">
-            <Heading className="mb-10">
+            <Heading className="mb-14">
                 NEW ARRIVALS
             </Heading>
             <Carousel>

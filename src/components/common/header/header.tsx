@@ -1,6 +1,5 @@
 import { CircleUserRound, Menu, Search, ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 import { TopBar } from './top-bar';
 import { Logo } from '../../shared/logo';
 import { MainMenu } from './main-menu';
@@ -27,7 +26,9 @@ export function Header() {
             <Link to="cart">
               <ShoppingCart />
             </Link>
-            <CircleUserRound className="text-sm" />
+            <Link to="/">
+              <CircleUserRound className="text-sm" />
+            </Link>
           </div>
         </div>
       </div>

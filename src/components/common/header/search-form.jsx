@@ -3,9 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export function SearchForm() {
-    
   const navigate = useNavigate();
-
   const [searchTerm, setSearchTerm] = useState('');
 
   const handlerSearch = (e) => {
@@ -14,7 +12,7 @@ export function SearchForm() {
     }
   };
   console.log(searchTerm);
-
+  
   return (
     <div className="py-3 w-[46.2%] bg-[#F0F0F0] rounded-full hidden lg:flex px-4">
       <Search className="text-gray-500" />

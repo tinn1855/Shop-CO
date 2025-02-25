@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "../../ui/carousel";
+import { Description } from "../../ui/description";
 
 export function FeedBack() {
     const feedbacks = [
@@ -46,9 +47,9 @@ export function FeedBack() {
                                     <h3 className="text-xl font-bold">{feedback.name}</h3>
                                     <img src="/images/check.png" alt="" />
                                 </div>
-                                <p>
+                                <Description>
                                     "{feedback.description}"
-                                </p>
+                                </Description>
                             </div>
                         </CarouselItem>
                     ))}

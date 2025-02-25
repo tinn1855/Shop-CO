@@ -8,9 +8,9 @@ export function Footer() {
         <div>
             <div className="container mx-auto px-4 lg:px-5 mt-10">
                 <div className=" bg-black p-6 lg:py-12 lg:px-14 rounded-2xl lg:flex items-center justify-between relative z-10">
-                    <h2 className="font-bold text-white font-[IntegralCF-Bold] text-3xl lg:text-4xl lg:w-1/2">
+                    <h3 className="font-bold text-white font-[IntegralCF-Bold] text-3xl lg:text-4xl lg:w-1/2">
                         STAY UPTO DATE ABOUT OUR LATEST OFFERS
-                    </h2>
+                    </h3>
                     <div className="lg:w-4/12 mt-8">
                         <div className="flex px-6 space-x-1 bg-white py-3 rounded-full">
                             <Mail className="text-gray-500" />

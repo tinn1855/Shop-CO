@@ -22,8 +22,8 @@ export function AlsoLike() {
                 <Carousel>
                     <CarouselContent>
                         {alsoLike.map((product, index) => (
-                            <CarouselItem className="basis-1/2 lg:basis-1/4">
-                                <Product product={product} key={index} />
+                            <CarouselItem key={index} className="basis-1/2 lg:basis-1/4">
+                                <Product product={product}  />
                             </CarouselItem>
                         )).slice(0,4)}
                     </CarouselContent>

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { cn } from "@/src/lib/utils";
 import { Button } from "../../ui/button";
 import { Plus, Minus, Check } from "lucide-react";
+import useCartStore from "../cart/cart-store";
 
 export default function ProductDetail() {
     const sizes = ["Small", "Medium", "Large", "X-Large"]
@@ -48,10 +49,18 @@ export default function ProductDetail() {
       .catch((error) => console.error('Error fetching product:', error));
   }, [id]);
 
+  const addToCart = useCartStore((state) => state.addToCart)
   if (!product) return <div>Loading...</div>;
-  console.log(product.images)
 
   const thumbnails = [product.images, product.images, product.images];
+  const handleAddToCart = () => {
+    if(!selectedSize || !selectedColor) {
+        console.log("Chọn size và màu")
+        return;
+    }
+    addToCart(product, quantity, selectedColor, selectedSize )
+        console.log("Đã thêm vào giỏ hàng")
+  }
 
   return (
     <div className="lg:flex lg:gap-10">
@@ -153,12 +162,17 @@ export default function ProductDetail() {
                     <button onClick={handleDecrease}>
                         <Minus/>
                     </button>
-                    <input type="text" onChange={handleQuantityChange} value={quantity} className="outline-none w-1/4 bg-[#F0f0f0] text-center font-semibold" />
+                    <input  type="text" 
+                            onChange={handleQuantityChange} 
+                            value={quantity} 
+                            className="outline-none w-1/4 bg-[#F0f0f0] text-center font-semibold"
+                    />
                     <button onClick={handleIncrease}>
                         <Plus />
                     </button>
                 </div>
-                <Button 
+                <Button
+                    onClick={handleAddToCart}
                     className="rounded-full w-2/3 py-[22px] lg:py-6"
                 >
                     Add to cart

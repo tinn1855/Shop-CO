@@ -52,9 +52,9 @@ export function Header() {
             <div className="lg:hidden">
               <Menu />
             </div>
-            <a href="/">
+            <Link to="/">
               <h1 className="font-[IntegralCF-Bold] text-[32px]">SHOP.CO</h1>
-            </a>
+            </Link>
           </div>
           <ul className="hidden lg:flex justify-between space-x-6">
             <DropdownMenu open={open} onOpenChange={setOpen}>

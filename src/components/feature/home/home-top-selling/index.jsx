@@ -8,11 +8,12 @@ export function HomeTopSelling() {
     const [topSellings, setTopSellings] = useState([])
     
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products?limit=6')
+        fetch('https://api.escuelajs.co/api/v1/products/?categoryId=1')
             .then(res => res.json())
             .then(data => setTopSellings(data))
             .catch(error => console.log('error fetching data:', error))
     },[])
+    console.log(topSellings)
     return (
         <div>
             <h2 className="text-center text-3xl lg:text-5xl font-[IntegralCF-Bold]">TOP SELLING</h2>

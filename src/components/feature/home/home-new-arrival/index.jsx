@@ -7,18 +7,17 @@ import { Carousel, CarouselContent, CarouselItem } from "@/src/components/ui/car
 export function HomeNewArrival() {
     const [newArrivals, setNewArrivals] = useState([])
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
+        fetch('https://api.escuelajs.co/api/v1/products')
             .then(res => res.json())
             .then(data => setNewArrivals(data))
             .catch(error => console.log('error fetching data:', error))
     },[])
-    console.log(newArrivals)
     return (
         <div className="">
             <h2 className="font-[IntegralCF-Bold] text-3xl lg:text-5xl text-center my-8 lg:my-14">
                 NEW ARRIVALS
             </h2>
-            <Carousel className="overflow-hidden">
+            <Carousel>
                 <CarouselContent>
                     {newArrivals.map((product, index) => (
                         <CarouselItem key={index} className="basis-1/2 lg:basis-1/4">

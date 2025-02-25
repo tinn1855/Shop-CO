@@ -1,4 +1,4 @@
-import { CategoryProduct } from "@/src/components/feature/category/category-product";
+import { CategoryProduct } from "@/src/components/feature/category/casual";
 import { Sidebar } from "@/src/components/feature/category/sidebar";
 import { ChevronRight } from "lucide-react";
 

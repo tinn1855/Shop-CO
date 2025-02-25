@@ -42,16 +42,16 @@ export default function ProductDetail() {
     }
   
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
+    fetch(`https://api.escuelajs.co/api/v1/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data))
       .catch((error) => console.error('Error fetching product:', error));
   }, [id]);
 
   if (!product) return <div>Loading...</div>;
+  console.log(product.images)
 
-  // Fake thumbnails array (since the API provides only one image per product)
-  const thumbnails = [product.image, product.image, product.image];
+  const thumbnails = [product.images, product.images, product.images];
 
   return (
     <div className="lg:flex lg:gap-10">
@@ -105,7 +105,7 @@ export default function ProductDetail() {
             <h2 className="text-2xl lg:text-5xl font-bold font-[IntegralCF-Bold] line-clamp-2">
                 {product.title}
             </h2>
-            <span className="text-sm">{product.rating.rate}/5</span>
+            <span className="text-sm">4.5/5</span>
             <div className="flex gap-3 items-center">
                 <h3 className="text-2xl lg:text-[32px] font-bold">${product.price}</h3>
                 <del className="text-2xl lg:text-[32px] font-bold text-gray-500">${product.price}</del>

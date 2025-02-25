@@ -6,7 +6,7 @@ import {
   ShoppingCart,
   X,
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,6 +17,15 @@ import { useState } from 'react';
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handlerSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && searchTerm.trim() !== '') {
+      navigate(`/category/?title=${searchTerm}`);
+    }
+  };
+  console.log(searchTerm);
   return (
     <div>
       <div className="bg-black py-1.5 lg:py-[7px]">
@@ -60,7 +69,9 @@ export function Header() {
                 onMouseEnter={() => setOpen(true)}
                 onMouseLeave={() => setOpen(false)}
               >
-                <DropdownMenuItem>Casual</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/category/casual">Casual</Link>
+                </DropdownMenuItem>
                 <DropdownMenuItem>Gym</DropdownMenuItem>
                 <DropdownMenuItem>Party</DropdownMenuItem>
                 <DropdownMenuItem>Formal</DropdownMenuItem>
@@ -76,6 +87,11 @@ export function Header() {
             <input
               className="bg-[#F0F0F0] rounded-full w-full outline-none px-3"
               placeholder="Search for products..."
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+              }}
+              onKeyDown={handlerSearch}
             />
           </div>
           <div className="flex justify-end space-x-2 lg:space-x-4">

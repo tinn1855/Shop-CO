@@ -7,7 +7,7 @@ export function AlsoLike() {
     const [alsoLike, setAlsoLike] = useState([])
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
+        fetch('https://api.escuelajs.co/api/v1/products')
             .then(res => res.json())
             .then(data => setAlsoLike(data))
             .catch(error => console.log("Error fetching data: ", error))

@@ -16,7 +16,7 @@ export function CategoryProducts({ product }) {
                     <Star className="fill-[#FFC633]" stroke={1.0} />
                     <Star className="fill-[#FFC633]" stroke={1.0} />
                 </div>
-                {/* <span className="text-xs lg:text-base">{product.rating.rate}/5</span> */}
+                <span className="text-xs lg:text-base">4.5/5</span>
             </div>
             <div className="flex gap-1 items-center">
                 <p className="font-bold text-xl lg:text-2xl">${product.price}</p>

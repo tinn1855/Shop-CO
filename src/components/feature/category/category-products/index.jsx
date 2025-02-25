@@ -1,7 +1,6 @@
-import { CategoryProducts } from "@/src/components/molecules/category-product";
+import { CategoryProduct } from "@/src/components/molecules/category-product";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/src/components/ui/sheet";
 import { SlidersHorizontal } from "lucide-react";
-import { useEffect } from "react"
 import { useState } from "react"
 import { SidebarFilter } from "../sidebar/filter";
 import { FilterByPrice } from "../sidebar/filter-by-price";
@@ -10,21 +9,15 @@ import { FilterBySize } from "../sidebar/filter-by-size";
 import { FilterByStyle } from "../sidebar/filter-by-style";
 import { Button } from "@/src/components/ui/button";
 import { Paginations } from "@/src/components/molecules/pagination/pagination";
+import { useQueryProductsByCategoryId } from "@/src/hooks/queries/use-query-products-by-category";
 
 
-export function CategoryProduct() {
-    
-    const [categoryProduct, setCategoryProduct] = useState([]);
+export function CategoryProducts({categoryId}) {
     const [currentPage, setCurrentPage] = useState(1);
+
+    const {data: categoryProduct} = useQueryProductsByCategoryId(categoryId)
+    
     const itemsPerPages = 9;
-
-    useEffect(() => {
-        fetch('https://api.escuelajs.co/api/v1/products')
-            .then(res => res.json())
-            .then(data => setCategoryProduct(data))
-            .catch(error => console.log("Error fetching data:", error))
-    }, [])
-
     const totalPages = Math.ceil(categoryProduct.length / itemsPerPages)
     const currentItems = categoryProduct.slice((currentPage - 1) * itemsPerPages, currentPage * itemsPerPages)
 
@@ -57,7 +50,7 @@ export function CategoryProduct() {
                                 <FilterByColor/>
                                 <FilterBySize/>
                                 <FilterByStyle/>
-                                <Button className="w-full rounded-full py-6">Apply Filer</Button>
+                                <Button>Apply Filer</Button>
                             </div>
                             </SheetDescription>
                         </SheetHeader>
@@ -66,7 +59,7 @@ export function CategoryProduct() {
             </div>
             <div className="grid lg:grid-cols-3 grid-cols-2 gap-x-3.5 gap-y-6 lg:gap-4 mt-9 lg:mt-5">
                 {currentItems.map((product, index) => (
-                    <CategoryProducts product={product} key={index}/>
+                    <CategoryProduct product={product} key={index}/>
                 ))}
             </div>
             <div className="border-b mt-6 w-full"></div>

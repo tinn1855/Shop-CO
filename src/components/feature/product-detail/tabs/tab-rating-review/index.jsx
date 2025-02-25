@@ -17,20 +17,22 @@ export function TabRating() {
                         <SlidersHorizontal />
                     </div>
                     <div>
-                    <div className="hidden lg:block">
-                        <Select>
-                            <SelectTrigger className="bg-[#f0f0f0] py-6 font-medium px-5 rounded-full">
-                                <SelectValue placeholder="Latest" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="latest">Latest</SelectItem>
-                                <SelectItem value="betsseller">Best Seller</SelectItem>
-                                <SelectItem value="oldest">Oldest</SelectItem>
-                            </SelectContent>
-                        </Select>
+                        <div className="hidden lg:block">
+                            <Select>
+                                <SelectTrigger className="bg-[#f0f0f0] py-6 font-medium px-5 rounded-full">
+                                    <SelectValue placeholder="Latest" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="latest">Latest</SelectItem>
+                                    <SelectItem value="betsseller">Best Seller</SelectItem>
+                                    <SelectItem value="oldest">Oldest</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
                     </div>
+                    <div>
+                        <Button className="text-xs lg:text-base py-5 lg:px-7 lg:py-6">Write a Review</Button>
                     </div>
-                    <Button className="rounded-full text-xs lg:text-base py-5 lg:px-7 lg:py-6 font-medium">Write a Review</Button>
                 </div>
             </div>
             <FeedBackProductDetail/>

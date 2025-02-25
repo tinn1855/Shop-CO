@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export function CategoryProducts({ product }) {
+export function CategoryProduct({ product }) {
     return (
         <div className="col-span-1 lg:space-y-1">
             <Link to={`/product/${product.id}`} className="bg-[#F0EEED] aspect-square flex items-center justify-center rounded-xl">

@@ -3,6 +3,7 @@ import { useState } from "react"
 import { Product } from "../../../molecules/product"
 import { Button } from "@/src/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem } from "@/src/components/ui/carousel"
+import { Heading } from "@/src/components/ui/heading"
 
 export function HomeNewArrival() {
     const [newArrivals, setNewArrivals] = useState([])
@@ -14,9 +15,9 @@ export function HomeNewArrival() {
     },[])
     return (
         <div className="">
-            <h2 className="font-[IntegralCF-Bold] text-3xl lg:text-5xl text-center my-8 lg:my-14">
+            <Heading className="mb-10">
                 NEW ARRIVALS
-            </h2>
+            </Heading>
             <Carousel>
                 <CarouselContent>
                     {newArrivals.map((product, index) => (
@@ -27,7 +28,7 @@ export function HomeNewArrival() {
                 </CarouselContent>
             </Carousel>
             <div className="flex justify-center mt-9">
-                <Button variant="outline" className=" text-center py-6 w-56 rounded-full border text-medium">
+                <Button variant="outline">
                     View All
                 </Button>
             </div>

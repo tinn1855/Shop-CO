@@ -6,10 +6,6 @@ export function DefaultTemplate() {
     return (
       <>
         <Header/>
-  
-        {/* This element will render either <DashboardMessages> when the URL is
-            "/messages", <DashboardTasks> at "/tasks", or null if it is "/"
-        */}
         <Outlet/>
         <Footer/>
       </>

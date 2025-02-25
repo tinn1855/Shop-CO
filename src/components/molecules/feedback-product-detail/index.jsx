@@ -52,7 +52,7 @@ export function FeedBackProductDetail() {
                 ))}
             </div>
             <div className="flex justify-center text-sm lg:text-base font-medium">
-                <Button variant="outline" className="rounded-full mt-9 py-6 px-10 lg:px-12">Load More Reviews</Button>
+                <Button variant="outline" className="mt-9 py-6 px-10 lg:px-12">Load More Reviews</Button>
             </div>
         </div>
     )

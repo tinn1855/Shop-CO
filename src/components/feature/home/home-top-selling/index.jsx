@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { Product } from "../../../molecules/product"
 import { Button } from "@/src/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem } from "@/src/components/ui/carousel"
+import { Heading } from "@/src/components/ui/heading"
 
 export function HomeTopSelling() {
     const [topSellings, setTopSellings] = useState([])
@@ -16,7 +17,7 @@ export function HomeTopSelling() {
     console.log(topSellings)
     return (
         <div>
-            <h2 className="text-center text-3xl lg:text-5xl font-[IntegralCF-Bold]">TOP SELLING</h2>
+            <Heading>TOP SELLING</Heading>
             <Carousel className="overflow-hidden mt-14">
                 <CarouselContent>
                     {topSellings.map((product, index) => (
@@ -27,7 +28,7 @@ export function HomeTopSelling() {
                 </CarouselContent>
             </Carousel>
             <div className="flex justify-center mt-9">
-                <Button variant="outline" className=" text-center py-6 w-56 rounded-full border text-medium">
+                <Button variant="outline">
                     View All
                 </Button>
             </div>

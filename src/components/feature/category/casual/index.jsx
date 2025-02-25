@@ -1,4 +1,4 @@
-import { CategoryProducts } from "@/src/components/molecules/category-product";
+import { CategoryProduct } from "@/src/components/molecules/category-product";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/src/components/ui/sheet";
 import { SlidersHorizontal } from "lucide-react";
 import { useEffect } from "react"
@@ -13,7 +13,7 @@ import { Paginations } from "@/src/components/molecules/pagination/pagination";
 import { useSearchParams } from "react-router-dom";
 
 
-export function CategoryProduct() {
+export function CategoryProducts() {
     
     const [categoryProduct, setCategoryProduct] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -60,7 +60,7 @@ export function CategoryProduct() {
                                 <FilterByColor/>
                                 <FilterBySize/>
                                 <FilterByStyle/>
-                                <Button className="w-full rounded-full py-6">Apply Filer</Button>
+                                <Button>Apply Filer</Button>
                             </div>
                             </SheetDescription>
                         </SheetHeader>
@@ -69,7 +69,7 @@ export function CategoryProduct() {
             </div>
             <div className="grid lg:grid-cols-3 grid-cols-2 gap-x-3.5 gap-y-6 lg:gap-4 mt-9 lg:mt-5">
                 {currentItems.map((product, index) => (
-                    <CategoryProducts product={product} key={index}/>
+                    <CategoryProduct product={product} key={index}/>
                 ))}
             </div>
             <div className="border-b mt-6 w-full"></div>

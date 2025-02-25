@@ -5,6 +5,7 @@ import { Button } from "../../ui/button";
 import { Plus, Minus, Check } from "lucide-react";
 import useCartStore from "../cart/cart-store";
 
+
 export default function ProductDetail() {
     const sizes = ["Small", "Medium", "Large", "X-Large"]
     const colors = [
@@ -55,11 +56,10 @@ export default function ProductDetail() {
   const thumbnails = [product.images, product.images, product.images];
   const handleAddToCart = () => {
     if(!selectedSize || !selectedColor) {
-        console.log("Chọn size và màu")
+        console.log("Vui lòng chọn size và màu")
         return;
     }
-    addToCart(product, quantity, selectedColor, selectedSize )
-        console.log("Đã thêm vào giỏ hàng")
+    addToCart(product, quantity, selectedColor, selectedSize)
   }
 
   return (
@@ -93,7 +93,7 @@ export default function ProductDetail() {
         </div>
         <div className="lg:hidden grid grid-cols-3 gap-3 lg:gap-3.5">
             {thumbnails.map((thumb, index) => (
-            <button
+            <Button
                 key={index}
                 className={cn(
                 "border rounded-xl overflow-hidden flex items-center justify-center bg-[#F0F0F0]",
@@ -106,7 +106,7 @@ export default function ProductDetail() {
                 alt={`Thumbnail ${index + 1}`}
                 className="object-contain"
                 />
-            </button>
+            </Button>
             ))}
         </div>
       </div>
@@ -171,12 +171,14 @@ export default function ProductDetail() {
                         <Plus />
                     </button>
                 </div>
-                <Button
-                    onClick={handleAddToCart}
-                    className="rounded-full w-2/3 py-[22px] lg:py-6"
-                >
-                    Add to cart
-                </Button>
+                <div className="w-[70%]">
+                    <Button
+                        onClick={handleAddToCart}
+                        className="max-w-full"
+                    >
+                        Add to cart
+                    </Button>
+                </div>
             </div>
       </div>
     </div>

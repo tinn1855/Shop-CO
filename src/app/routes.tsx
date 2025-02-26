@@ -10,7 +10,7 @@ export function AppRoutes() {
     <Routes>
       <Route path="/" element={<DefaultTemplate />}>
         <Route index element={<PageHome />} />
-        <Route path="category/:id" element={<PageCategory />} />
+        <Route path="categories/:id/products" element={<PageCategory />} />
         <Route path="product/:id" element={<PageProductDetail />} />
         <Route path="cart" element={<PageCart />} />
         <Route path="*" element={<>Not found</>} />

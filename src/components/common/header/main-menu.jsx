@@ -21,14 +21,14 @@ export function MainMenu() {
         onMouseLeave={() => setOpen(false)}
         className="flex items-center"
       >
-        Shop <ChevronDown className="text-sm" />
+        Shop <ChevronDown size={20} />
       </DropdownMenuTrigger>
       <DropdownMenuContent
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
       >
         {categories.map(category => <DropdownMenuItem>
-          <Link to={category.link}>{category.name}</Link>
+          <Link key={category.id} to={`categories/${category.id}/products`}>{category.name}</Link>
         </DropdownMenuItem>)}
       </DropdownMenuContent>
     </DropdownMenu>

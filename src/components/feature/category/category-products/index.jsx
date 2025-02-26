@@ -10,13 +10,15 @@ import { FilterByStyle } from "../sidebar/filter-by-style";
 import { Button } from "@/src/components/ui/button";
 import { Paginations } from "@/src/components/molecules/pagination/pagination";
 import { useQueryProductsByCategoryId } from "@/src/hooks/queries/use-query-products-by-category";
+import { UseQuerySingleCategory } from "@/src/hooks/queries/use-query-single-category";
 
 
 export function CategoryProducts({categoryId}) {
     const [currentPage, setCurrentPage] = useState(1);
 
+    const {data: singleCategory} = UseQuerySingleCategory(categoryId)
     const {data: categoryProduct} = useQueryProductsByCategoryId(categoryId)
-    
+
     const itemsPerPages = 9;
     const totalPages = Math.ceil(categoryProduct.length / itemsPerPages)
     const currentItems = categoryProduct.slice((currentPage - 1) * itemsPerPages, currentPage * itemsPerPages)
@@ -25,7 +27,7 @@ export function CategoryProducts({categoryId}) {
         <div>
             <div className="flex justify-between items-end">
                 <div className="flex items-end justify-between lg:w-full gap-2">
-                    <h3 className="font-bold text-2xl lg:text-3xl">Casual</h3>
+                    <h3 className="font-bold text-2xl lg:text-3xl">{singleCategory.name}</h3>
                     <div className="flex lg:space-x-3 text-sm lg:text-base">
                         <span className="pb-1 lg:pb-0">Showing {(currentPage - 1) * itemsPerPages + 1} - {Math.min(currentPage * itemsPerPages, categoryProduct.length)} of {categoryProduct.length} Products</span>
                         <div className="hidden lg:flex space-x-1 ">

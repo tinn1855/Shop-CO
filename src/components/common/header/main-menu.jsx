@@ -11,10 +11,9 @@ export function MainMenu() {
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Shop</NavigationMenuTrigger>
-          
           <NavigationMenuContent>
             {categories.map(category => 
-               <NavigationMenuLink key={category.id} className='flex flex-col px-5 py-1'>
+               <NavigationMenuLink key={category.id} className='flex flex-col px-4 mb-2 py-1'>
                 <Link to={`categories/${category.id}/products`}>
                   {category.name}
                   </Link>

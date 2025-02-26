@@ -178,7 +178,6 @@ export default function ProductDetail() {
                 <div className="w-[70%]">
                     <Button
                         onClick={handleAddToCart}
-                        className="max-w-full"
                     >
                         Add to cart
                         <Toaster richColors/>

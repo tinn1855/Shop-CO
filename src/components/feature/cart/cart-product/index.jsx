@@ -1,6 +1,7 @@
 import { Minus, Trash2, Plus } from "lucide-react"
 import useCartStore from "../cart-store"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/src/components/ui/alert-dialog";
+import { Link } from "react-router-dom";
 
 export function CartProduct() {
     const {cart, removeFromCart, updateQuantity} = useCartStore();
@@ -29,7 +30,10 @@ export function CartProduct() {
     return (
         <div>
             {cart.length === 0 ? (
-                <p>Cart is empty</p>
+                <div className="flex flex-col justify-center items-center">
+                    <p className="mb-2">Cart is empty</p>
+                    <Link className="border px-8 py-2 rounded-full" to="/">Shopping Now</Link>
+                </div>
             ) : (
                 cart.map((item) => (
                     <div key={item.id} className="flex gap-2 lg:gap-4 justify-between mb-5">

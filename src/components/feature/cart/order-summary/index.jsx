@@ -1,4 +1,4 @@
-import { Button } from "@/src/components/ui/button";
+import { Button } from "@/src/components/ui/_button";
 import { ArrowRight } from "lucide-react";
 import { Tag } from "lucide-react";
 import useCartStore from "../cart-store";
@@ -17,20 +17,20 @@ export function OrderSummary() {
             <div className="flex flex-col gap-2 lg:gap-5">
                 <div className="flex justify-between lg:text-xl">
                     <h2>Subtotal</h2>
-                    <span className="font-bold">${subTotal}</span>
+                    <span className="font-bold">${subTotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between lg:text-xl">
                     <h2>Discount (-20%)</h2>
-                    <span className="text-[#FF3333] font-bold">${discount}</span>
+                    <span className="text-[#FF3333] font-bold">${discount.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between lg:text-xl">
                     <h2>Delivery Fee</h2>
-                    <span className="font-bold">${deliveryFee}</span>
+                    <span className="font-bold">${deliveryFee.toFixed(2)}</span>
                 </div>
                 <div className="border-b"></div>
                 <div className="flex justify-between lg:text-xl">
                     <h2>Total</h2>
-                    <span className="font-bold text-xl lg:text-2xl">${total}</span>
+                    <span className="font-bold text-xl lg:text-2xl">${total.toFixed(2)}</span>
                 </div>
             </div>
             <div className="flex gap-3">
@@ -40,7 +40,7 @@ export function OrderSummary() {
                 </div>
                 <Button className="w-1/3 lg:w-1/4">Apply</Button>
             </div>
-            <Button className="py-6 mt-2 lg:mt-0">Go to Checkout <ArrowRight size={24} /></Button>
+            <Button className="mt-2 lg:mt-0">Go to Checkout <ArrowRight size={24} /></Button>
         </div>
     )
 }

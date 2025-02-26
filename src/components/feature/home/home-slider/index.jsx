@@ -13,7 +13,7 @@ export function HomeSlider() {
                         <p className="py-5 lg:py-8 text-gray-500 mr-5">
                             Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
                         </p>
-                        <Button className="lg:w-2/5 py-[26px]">Shop Now</Button>
+                        <Button>Shop Now</Button>
                         <div className="flex flex-wrap justify-center lg:justify-between gap-4 mt-5 lg:mt-12">
                              <div>
                                 <HeadingH3 className="">200+</HeadingH3>

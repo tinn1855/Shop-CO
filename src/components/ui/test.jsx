@@ -1,34 +1,31 @@
-import { SidebarFilter } from "../feature/category/sidebar/filter";
-import { FilterByColor } from "../feature/category/sidebar/filter-by-color";
-import { FilterByPrice } from "../feature/category/sidebar/filter-by-price";
-import { FilterBySize } from "../feature/category/sidebar/filter-by-size";
-import { FilterByStyle } from "../feature/category/sidebar/filter-by-style";
-import { Button } from "./button";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "./sheet";
+// import useQueryProductsByTitle from "@/src/hooks/queries/use-query-products-by-title";
+// import { useState } from "react";
 
-export function Test() {
-    return(
-        <div className="container mx-auto px-5">
+// const SearchProduct = () => {
+//   const [searchTerm, setSearchTerm] = useState("");
+//   const { products, loading, error } = useQueryProductsByTitle(searchTerm);
 
-        <Sheet>
-            <SheetTrigger>Open</SheetTrigger>
-            <SheetContent side="top">
-                <SheetHeader>
-                    <SheetTitle>Filter</SheetTitle>
-                        <SheetDescription>
-                        <div className="border border-gray-300 rounded-xl px-6 py-5 space-y-8 overflow-y-hidden">
-                            <SidebarFilter/>
-                            <FilterByPrice/>
-                            <FilterByColor/>
-                            <FilterBySize/>
-                            <FilterByStyle/>
-                            <Button className="w-full rounded-full py-6">Apply Filer</Button>
-                        </div>
-                        </SheetDescription>
-                </SheetHeader>
-            </SheetContent>
-        </Sheet>
+//   return (
+//     <div className="p-4">
+//       <input
+//         type="text"
+//         className="border p-2 w-full rounded"
+//         placeholder="Tìm kiếm sản phẩm..."
+//         value={searchTerm}
+//         onChange={(e) => setSearchTerm(e.target.value)}
+//       />
+//       {loading && <p>Đang tải...</p>}
+//       {error && <p className="text-red-500">Lỗi khi tải dữ liệu</p>}
+//       {products.length === 0 && !loading && !error && <p>Không tìm thấy sản phẩm nào.</p>}
+//       <ul className="mt-4">
+//         {products.map((product) => (
+//           <li key={product.id} className="border-b py-2">
+//             {product.title}
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
 
-        </div>
-    )
-}
+// export default SearchProduct;

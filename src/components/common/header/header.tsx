@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { TopBar } from './top-bar';
 import { Logo } from '../../shared/logo';
 import { MainMenu } from './main-menu';
-import { SearchForm } from './search-form';
+import SearchForm from './search-form';
 
 export function Header() {
   return (

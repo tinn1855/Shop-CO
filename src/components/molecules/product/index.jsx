@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export function Product({product}) {
     return  (
         <div className="space-y-1 lg:space-y-2">
-            <Link to={`/product/${product.id}`} className="bg-[#F0EEED] aspect-square lg:mb-4 flex items-center justify-center rounded-xl">
+            <Link to={`/products/${product.id}`} className="bg-[#F0EEED] aspect-square lg:mb-4 flex items-center justify-center rounded-xl">
                 <img src={product.category.image} className="object-contain h-full" alt={product.title} />
             </Link>
             <h3 className="font-bold lg:text-xl line-clamp-1 lg:line-clamp-2 overflow-hidden text-ellipsis lg:h-14">{product.title}</h3>

@@ -4,7 +4,7 @@ const useCartStore = create((set) => ({
     cart: [],
     addToCart: (product, quantity, selectedColor, selectedSize) => 
         set((state) => {
-            const existingItem = state.cart.find( // Sửa lỗi `state.card` -> `state.cart`
+            const existingItem = state.cart.find(
                 (item) => 
                     item.id === product.id &&
                     item.size === selectedSize &&
@@ -30,9 +30,22 @@ const useCartStore = create((set) => ({
                 ],
             };
         }),
-    removeFromCart: (id) => 
-        set((state) => ({ cart: state.cart.filter((item) => item.id !== id) })),
+
+    updateQuantity: (id, size, color, newQuantity) => 
+        set((state) => ({
+            cart: state.cart.map((item) => 
+                item.id === id && item.size === size && item.color === color
+                    ? {...item, quantity: newQuantity}
+                    : item
+            ),
+    })),
+
+    removeFromCart: (id,size, color) => 
+        set((state) => ({ 
+            cart: state.cart.filter((item) => 
+                !(item.id === id && item.size === size && item.color === color)) 
+        })),
     clearCart: () => set({ cart: [] }),
 }));
 
-export default useCartStore; // Export chuẩn
+export default useCartStore; 

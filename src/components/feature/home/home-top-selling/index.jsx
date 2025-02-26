@@ -14,7 +14,7 @@ export function HomeTopSelling() {
             .then(data => setTopSellings(data))
             .catch(error => console.log('error fetching data:', error))
     },[])
-    console.log(topSellings)
+
     return (
         <div>
             <Heading>TOP SELLING</Heading>

@@ -1,45 +1,28 @@
 import { Minus, Trash2, Plus } from "lucide-react"
-import { useState } from "react"
 import useCartStore from "../cart-store"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/src/components/ui/alert-dialog";
 
 export function CartProduct() {
-    const {cart, removeFromCart} = useCartStore();
-    const [quantities, setQuantities] = useState(() => {
-        const initialQuantities = {};
-        cart.forEach((item) => {
-            initialQuantities[item.id] = item.quantity;
-        });
-        return initialQuantities;
-    })
+    const {cart, removeFromCart, updateQuantity} = useCartStore();
 
-    const handleIncrease = (id) => {
-        setQuantities((prev) => ({
-            ...prev,
-            [id]: prev[id] + 1,
-        }))
-    }
+    const handleIncrease = (id, size, color, currentQuantity) => {
+        updateQuantity(id, size, color, currentQuantity + 1);
+    };
     
-    const handleDecrease = (id) => {
-        if (quantities[id] > 1) {
-            setQuantities((prev) => ({
-                ...prev,
-                [id]: prev[id] - 1,
-            }));
+    const handleDecrease = (id, size, color, currentQuantity) => {
+        if (currentQuantity > 1) {
+            updateQuantity(id, size, color, currentQuantity - 1);
         }
+    };
+    
+    const handleRemove = (id, size, color) => {
+        removeFromCart(id,size,color)
     }
     
-    const handleRemove = (id) => {
-        removeFromCart(id);
-    }
-    
-    const handleQuantityChange = (id, value) => {
+    const handleQuantityChange = (id, size, color, value) => {
         const newValue = parseInt(value, 10);
         if (!isNaN(newValue) && newValue >= 1) {
-            setQuantities((prev) => ({
-                ...prev,
-                [id]: newValue,
-            }));
+            updateQuantity(id, size, color, newValue);
         }
     };
 
@@ -74,23 +57,23 @@ export function CartProduct() {
                                         </AlertDialogHeader>
                                         <AlertDialogFooter>
                                             <AlertDialogCancel>Cancel</AlertDialogCancel>
-                                            <AlertDialogAction onClick={() => handleRemove(item.id)}>Yes</AlertDialogAction>
+                                            <AlertDialogAction onClick={() => handleRemove(item.id, item.size, item.color )}>Yes</AlertDialogAction>
                                         </AlertDialogFooter>
                                     </AlertDialogContent>
                                 </AlertDialog>
                             </div>
                             <div className="flex justify-between items-end">
-                                <h3 className="font-bold text-xl lg:text-2xl">${item.price * quantities[item.id]}</h3>
+                                <h3 className="font-bold text-xl lg:text-2xl">${item.price * item.quantity}</h3>
                                 <div className="w-28 lg:w-32 bg-[#F0F0F0] rounded-full flex px-2 py-1 lg:px-5 lg:py-2.5 justify-between">
-                                    <button onClick={() => handleDecrease(item.id)}>
+                                    <button onClick={() => handleDecrease(item.id, item.size, item.color, item.quantity)}>
                                         <Minus />
                                     </button>
                                     <input 
-                                        onChange={(e) => handleQuantityChange(item.id, e.target.value)}
+                                        onChange={(e) => handleQuantityChange(item.id, item.size, item.color, e.target.value)}
                                         type="text" 
-                                        value={quantities[item.id]} 
+                                        value={item.quantity}
                                         className="outline-none font-semibold bg-[#F0F0F0] w-6 text-center" />
-                                    <button onClick={() => handleIncrease(item.id)}>
+                                    <button onClick={() => handleIncrease(item.id, item.size, item.color, item.quantity)}>
                                         <Plus />
                                     </button>
                                 </div>

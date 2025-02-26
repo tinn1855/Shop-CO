@@ -1,28 +1,36 @@
 import { Button } from "@/src/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Tag } from "lucide-react";
+import useCartStore from "../cart-store";
 
 export function OrderSummary() {
+    const {cart} = useCartStore();
+    
+    const subTotal = cart.reduce((total, item) => total + item.price * item.quantity, 0)
+    const discount = subTotal * 0.2;
+    const deliveryFee = 15;
+    const total = subTotal - discount + deliveryFee;
+
     return (
         <div className="flex flex-col gap-2 lg:gap-6">
             <h2 className="text-xl lg:text-2xl font-bold">Order Summary</h2>
             <div className="flex flex-col gap-2 lg:gap-5">
                 <div className="flex justify-between lg:text-xl">
                     <h2>Subtotal</h2>
-                    <span className="font-bold">$565</span>
+                    <span className="font-bold">${subTotal}</span>
                 </div>
                 <div className="flex justify-between lg:text-xl">
                     <h2>Discount (-20%)</h2>
-                    <span className="text-[#FF3333] font-bold">-$113</span>
+                    <span className="text-[#FF3333] font-bold">${discount}</span>
                 </div>
                 <div className="flex justify-between lg:text-xl">
                     <h2>Delivery Fee</h2>
-                    <span className="font-bold">$15</span>
+                    <span className="font-bold">${deliveryFee}</span>
                 </div>
                 <div className="border-b"></div>
                 <div className="flex justify-between lg:text-xl">
                     <h2>Total</h2>
-                    <span className="font-bold text-xl lg:text-2xl">$467</span>
+                    <span className="font-bold text-xl lg:text-2xl">${total}</span>
                 </div>
             </div>
             <div className="flex gap-3">

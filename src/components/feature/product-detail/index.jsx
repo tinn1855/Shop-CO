@@ -4,6 +4,8 @@ import { cn } from "@/src/lib/utils";
 import { Button } from "../../ui/button";
 import { Plus, Minus, Check } from "lucide-react";
 import useCartStore from "../cart/cart-store";
+import { Toaster } from "../../ui/sonner";
+import { toast } from "sonner";
 
 
 export default function ProductDetail() {
@@ -54,12 +56,14 @@ export default function ProductDetail() {
   if (!product) return <div>Loading...</div>;
 
   const thumbnails = [product.images, product.images, product.images];
+  
   const handleAddToCart = () => {
     if(!selectedSize || !selectedColor) {
-        console.log("Vui lòng chọn size và màu")
+        toast.error("Please select size and color!")
         return;
     }
     addToCart(product, quantity, selectedColor, selectedSize)
+        toast.success("Successfully add to cart")
   }
 
   return (
@@ -177,6 +181,7 @@ export default function ProductDetail() {
                         className="max-w-full"
                     >
                         Add to cart
+                        <Toaster richColors/>
                     </Button>
                 </div>
             </div>

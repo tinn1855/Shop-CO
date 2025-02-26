@@ -1,37 +1,30 @@
-import { useState } from 'react';
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-  } from '../../ui/dropdown-menu';
-import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useQueryCategories } from '@/src/hooks/queries/use-query-categories';
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '../../ui/navigation-menu';
 
 export function MainMenu() {
-    const [open, setOpen] = useState(false);
 
     const {data: categories} = useQueryCategories()
 
-    return <ul className="hidden lg:flex justify-between space-x-6">
-    <DropdownMenu open={open} onOpenChange={setOpen}>
-      <DropdownMenuTrigger
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
-        className="flex items-center"
-      >
-        Shop <ChevronDown size={20} />
-      </DropdownMenuTrigger>
-      <DropdownMenuContent
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
-      >
-        {categories.map(category => <DropdownMenuItem>
-          <Link key={category.id} to={`categories/${category.id}/products`}>{category.name}</Link>
-        </DropdownMenuItem>)}
-      </DropdownMenuContent>
-    </DropdownMenu>
+    return <ul className="hidden lg:flex justify-between items-center space-x-6">
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Shop</NavigationMenuTrigger>
+          
+          <NavigationMenuContent>
+            {categories.map(category => 
+               <NavigationMenuLink key={category.id} className='flex flex-col px-5 py-1'>
+                <Link to={`categories/${category.id}/products`}>
+                  {category.name}
+                  </Link>
+               </NavigationMenuLink>
+            )}
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
+
     <li>On Sale</li>
     <li>New Arrivals</li>
     <li>Brands</li>

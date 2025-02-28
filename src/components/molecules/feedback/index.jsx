@@ -30,7 +30,7 @@ export function FeedBack() {
         }
     ]
     return (
-        <div className="mt-6 lg:mt-10">    
+        <div className="mt-6 lg:mt-10">
             <Carousel>
                 <CarouselContent>
                     {feedbacks.map((feedback, index) => (

@@ -5,6 +5,7 @@ import { PageCategory } from '../components/pages/category';
 import { PageProductDetail } from '../components/pages/product-detail';
 import { PageCart } from '../components/pages/cart';
 import { SearchProduct } from '../components/feature/search-product';
+import { Login } from '../components/pages/login';
 
 export function AppRoutes() {
   return (
@@ -17,6 +18,7 @@ export function AppRoutes() {
         <Route path="products" element={<SearchProduct />} />
         <Route path="*" element={<>Not found</>} />
       </Route>
+      <Route path="login" element={<Login />} />
     </Routes>
   );
 }

@@ -26,7 +26,7 @@ export function Header() {
             <Link to="cart">
               <ShoppingCart />
             </Link>
-            <Link to="/">
+            <Link to="login">
               <CircleUserRound className="text-sm" />
             </Link>
           </div>

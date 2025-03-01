@@ -1,20 +1,23 @@
-import { ArrowLeft } from "lucide-react";
-import { ArrowRight } from "lucide-react";
 import { FeedBack } from "../../../molecules/feedback";
 import { Heading } from "@/src/components/ui/heading";
+import { Carousel, CarouselNext, CarouselPrevious } from "@/src/components/ui/carousel";
 
 export function HomeFeedback() {
     
     return (
         <div className="container mx-auto px-4 lg:px-5 mt-10 lg:mb-20">
-            <div className="flex justify-between items-end">
-                <Heading className="text-left">OUR HAPPY CUSTOMERS</Heading>
-                <div className="flex items-end space-x-5">
-                    <a href="/"><ArrowLeft /></a>
-                    <a href="/"><ArrowRight /></a>
+            <Carousel>
+                <div className="flex justify-between items-end">
+                    <div>
+                        <Heading className="text-left">OUR HAPPY CUSTOMERS</Heading>
+                    </div>
+                    <div className="flex items-end space-x-5">
+                        <CarouselPrevious />
+                        <CarouselNext />
+                    </div>
                 </div>
-            </div>
-            <FeedBack/>
+                <FeedBack/>
+            </Carousel>
         </div>
     );
     

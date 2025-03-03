@@ -5,6 +5,7 @@ import { HeadingH3 } from "../../ui/heading-h3";
 import { Input } from "../../ui/input";
 import { Logo } from "../../shared/logo";
 import { Description } from "../../ui/description";
+import { Dot } from "lucide-react";
 
 export function Login() {
     return(
@@ -29,15 +30,26 @@ export function Login() {
                 <div className="lg:w-2/5 w-full flex flex-col gap-5">
                    <Input placeholder="Email" className="w-full"/>
                    <Input placeholder="Password" type="password" />
-                   <div className="flex justify-between">
+                   <div className="flex justify-between text-sm lg:text-base">
                         <div>
                             <Checkbox />
-                            <label className="ml-2 text-sm">Remember me</label>
+                            <label className="ml-2">Remember me</label>
                         </div>
-                        <Link to="/" className="font-medium text-sm">Forgot Password?</Link>
+                        <Link to="/" className="font-medium ">Forgot Password?</Link>
                     </div>
                 </div>
                 <Button>Sign In</Button>
+                <div className="text-sm lg:hidden">
+                    <h3>
+                        If you don't have an account.
+                        <Link to="/signup" className="font-bold"> SIGN UP NOW</Link>
+                    </h3>
+                </div>
+                <div className="flex gap-2 mt-10 font-medium text-sm">
+                    <Link>Privacy Policy</Link>
+                    <Dot />
+                    <Link>Terms & Conditons</Link>
+                </div>
             </div>  
             <div className="hidden lg:block lg:w-2/5 bg-[url(/images/model.png)] bg-cover">
                 <div className=" bg-black opacity-85 h-screen  text-white text-center px-20 flex flex-col gap-5 items-center justify-center">
@@ -46,9 +58,9 @@ export function Login() {
                     <p className="text-white text-xl">
                         Fill up personal information and start shopping with us. If you don't have an account. Please click this button
                     </p>
-                    <Button className="bg-white text-black hover:bg-gray-300">
+                    <Link to="/signup" className="bg-white text-black px-5 py-3 rounded-full w-3/5 hover:bg-gray-300">
                         SIGN UP
-                    </Button>
+                    </Link>
                 </div>  
             </div>
         </div>

@@ -6,6 +6,7 @@ import { PageProductDetail } from '../components/pages/product-detail';
 import { PageCart } from '../components/pages/cart';
 import { SearchProduct } from '../components/feature/search-product';
 import { Login } from '../components/pages/login';
+import { SignUp } from '../components/pages/sign-up';
 
 export function AppRoutes() {
   return (
@@ -19,6 +20,7 @@ export function AppRoutes() {
         <Route path="*" element={<>Not found</>} />
       </Route>
       <Route path="login" element={<Login />} />
+      <Route path="signup" element={<SignUp />} />
     </Routes>
   );
 }

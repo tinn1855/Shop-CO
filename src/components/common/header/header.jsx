@@ -1,5 +1,5 @@
 import { CircleUserRound, Menu, Search, ShoppingCart } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { TopBar } from './top-bar';
 import { Logo } from '../../shared/logo';
 import { MainMenu } from './main-menu';
@@ -7,7 +7,9 @@ import SearchForm from './search-form';
 import useCartStore from '../../feature/cart/cart-store';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '../../ui/hover-card';
 import { CartMini } from '../../feature/cart/cart-mini';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Avatar, AvatarImage } from '../../ui/avatar';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '../../ui/dropdown-menu';
 
 export function Header() {
   const { cart } = useCartStore();
@@ -15,12 +17,28 @@ export function Header() {
   const displayCount = totalProducts > 99 ? '99' : totalProducts;
 
   const [isOpenCart, setIsOpenCart] = useState(false)
-  
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+        setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
   const handleClickViewCart = () => {
     setIsOpenCart(false)
   }
-  
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    setUser(null);
+    navigate("/");
+    window.location.reload();
+  };
+  
   return (
     <div>
       <TopBar />
@@ -55,9 +73,31 @@ export function Header() {
                 ) : "Không có sản phẩm"}
               </HoverCardContent>
             </HoverCard>
-            <Link to="login">
-              <CircleUserRound className="text-sm" />
-            </Link>
+            {
+              user ? (
+                
+                  <DropdownMenu>
+                    <DropdownMenuTrigger>
+                      <Avatar>
+                        <AvatarImage src={user.avatar} />
+                      </Avatar>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem>Profile</DropdownMenuItem>
+                      <DropdownMenuItem>Purchased orders</DropdownMenuItem>
+                      <DropdownMenuItem onClick={handleLogout}>Log out</DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+
+              
+              ): (
+                <Link to="login">
+                  <CircleUserRound className="text-sm" />
+              </Link>
+              )
+            }
           </div>
         </div>
       </div>

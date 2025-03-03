@@ -6,8 +6,43 @@ import { Input } from "../../ui/input";
 import { Logo } from "../../shared/logo";
 import { Description } from "../../ui/description";
 import { Dot } from "lucide-react";
+import { useQueryUsers } from "@/src/hooks/queries/use-query-users";
+import { useState } from "react";
 
 export function Login() {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [errors, setErrors] = useState({ email: "", password: "" })
+    const {handleLogin, error, loading } = useQueryUsers();
+
+    const validateEmail = (email) => {
+        if (!email) return "Email không được để trống!";
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!regex.test(email)) return "Email không hợp lệ!";
+        return "";
+    }
+
+    const validatePassword = (password) => {
+        if (!password) return "Mật khẩu không được để trống!";
+        if (password.length < 6) return "Mật khẩu phải có ít nhất 6 ký tự!";
+        return "";
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const emailError = validateEmail(email);
+        const passwordError = validatePassword(password);
+
+        if (emailError || passwordError) {
+            setErrors({ email: emailError, password: passwordError });
+            return;
+        }
+
+        setErrors({ email: "", password: "" });
+        handleLogin(email, password);
+    }
+
     return(
         <div className="flex flex-col mt-8 lg:mt-0 lg:flex-row text-center items-center justify-center">
             <div className="lg:w-3/5 w-full px-5 flex flex-col gap-4 lg:justify-center items-center">
@@ -28,17 +63,32 @@ export function Login() {
                     or use your email account
                 </Description>
                 <div className="lg:w-2/5 w-full flex flex-col gap-5">
-                   <Input placeholder="Email" className="w-full"/>
-                   <Input placeholder="Password" type="password" />
-                   <div className="flex justify-between text-sm lg:text-base">
-                        <div>
-                            <Checkbox />
-                            <label className="ml-2">Remember me</label>
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                        {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+                        <Input 
+                            placeholder="Email" 
+                            className="w-full"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+                        <Input 
+                            placeholder="Password" 
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <div className="flex justify-between text-sm lg:text-base">
+                            <div>
+                                <Checkbox />
+                                <label className="ml-2">Remember me</label>
+                            </div>
+                            <Link to="/" className="font-medium ">Forgot Password?</Link>
                         </div>
-                        <Link to="/" className="font-medium ">Forgot Password?</Link>
-                    </div>
+                        {error && <p className="text-red-500 text-sm">{error}</p>}
+                        <Button type="submit" disabled={loading} > {loading ? "Signing In..." : "Sign In"}</Button>
+                    </form>
                 </div>
-                <Button>Sign In</Button>
                 <div className="text-sm lg:hidden">
                     <h3>
                         If you don't have an account.

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export function CartProduct() {
     const {cart, removeFromCart, updateQuantity} = useCartStore();
-
+    
     const handleIncrease = (id, size, color, currentQuantity) => {
         updateQuantity(id, size, color, currentQuantity + 1);
     };
@@ -36,7 +36,7 @@ export function CartProduct() {
                 </div>
             ) : (
                 cart.map((item) => (
-                    <div key={item.id} className="flex gap-2 lg:gap-4 justify-between mb-5">
+                    <div key={`${item.id}-${item.size}-${item.color}`} className="flex gap-2 lg:gap-4 justify-between mb-5">
                         <div className="aspect-square bg-[#F0f0f0] w-1/4 lg:w-1/5 rounded-xl">
                             <img src={item.category.image} className="w-32 object-contain h-full" alt={item.title} />
                         </div>

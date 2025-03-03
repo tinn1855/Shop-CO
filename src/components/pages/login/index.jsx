@@ -8,8 +8,8 @@ import { Description } from "../../ui/description";
 
 export function Login() {
     return(
-        <div className="flex items-center justify-center">
-            <div className="w-3/5 flex flex-col gap-4 justify-center items-center">
+        <div className="flex flex-col mt-8 lg:mt-0 lg:flex-row text-center items-center justify-center">
+            <div className="lg:w-3/5 w-full px-5 flex flex-col gap-4 lg:justify-center items-center">
                 <Logo/>
                 <div>
                     <HeadingH3>Sign Into Account</HeadingH3>
@@ -26,22 +26,22 @@ export function Login() {
                 <Description>
                     or use your email account
                 </Description>
-                <div className="w-2/5 flex flex-col gap-5">
-                   <Input placeholder="Email" />
+                <div className="lg:w-2/5 w-full flex flex-col gap-5">
+                   <Input placeholder="Email" className="w-full"/>
                    <Input placeholder="Password" type="password" />
                    <div className="flex justify-between">
                         <div>
                             <Checkbox />
-                            <label className="ml-2">Remember me</label>
+                            <label className="ml-2 text-sm">Remember me</label>
                         </div>
-                        <Link to="/" className="font-medium">Forgot Password?</Link>
+                        <Link to="/" className="font-medium text-sm">Forgot Password?</Link>
                     </div>
                 </div>
                 <Button>Sign In</Button>
             </div>  
-            <div className="w-2/5 bg-[url(/images/model.png)] bg-cover">
+            <div className="hidden lg:block lg:w-2/5 bg-[url(/images/model.png)] bg-cover">
                 <div className=" bg-black opacity-85 h-screen  text-white text-center px-20 flex flex-col gap-5 items-center justify-center">
-                    <HeadingH3>Hello, Friend!</HeadingH3>
+                    <HeadingH3>Welcome Back!</HeadingH3>
                     <div className="border-b border-white w-20"></div>
                     <p className="text-white text-xl">
                         Fill up personal information and start shopping with us. If you don't have an account. Please click this button

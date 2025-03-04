@@ -44,8 +44,8 @@ export function Header() {
       <TopBar />
       <div className="container mx-auto px-4 lg:px-5 py-6">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="lg:hidden">
+          <div className="flex items-center">
+            <div className="lg:hidden mr-3">
               <Menu />
             </div>
             <Logo />

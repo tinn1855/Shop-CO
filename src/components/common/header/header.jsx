@@ -52,7 +52,7 @@ export function Header() {
           </div>
           <MainMenu />
           <SearchForm />
-          <div className="flex justify-end space-x-2 lg:space-x-4">
+          <div className="flex justify-end items-center space-x-2 lg:space-x-4">
             <div className="lg:hidden">
               <Search />
             </div>
@@ -75,7 +75,6 @@ export function Header() {
             </HoverCard>
             {
               user ? (
-                
                   <DropdownMenu>
                     <DropdownMenuTrigger>
                       <Avatar>
@@ -90,8 +89,6 @@ export function Header() {
                       <DropdownMenuItem onClick={handleLogout}>Log out</DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
-
-              
               ): (
                 <Link to="login">
                   <CircleUserRound className="text-sm" />

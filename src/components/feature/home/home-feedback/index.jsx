@@ -12,7 +12,7 @@ export function HomeFeedback() {
                         <Heading className="text-left">OUR HAPPY CUSTOMERS</Heading>
                     </div>
                     <div className="flex items-end space-x-5">
-                        <CarouselPrevious />
+                        <CarouselPrevious/>
                         <CarouselNext />
                     </div>
                 </div>

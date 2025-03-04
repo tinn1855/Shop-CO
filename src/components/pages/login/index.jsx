@@ -85,7 +85,9 @@ export function Login() {
                             <Link to="/" className="font-medium ">Forgot Password?</Link>
                         </div>
                         {error && <p className="text-red-500 text-sm">{error}</p>}
-                        <Button type="submit" disabled={loading} > {loading ? "Signing In..." : "Sign In"}</Button>
+                        <div>
+                            <Button type="submit" disabled={loading} > {loading ? "Signing In..." : "Sign In"}</Button>
+                        </div>
                     </form>
                 </div>
                 <div className="text-sm lg:hidden">

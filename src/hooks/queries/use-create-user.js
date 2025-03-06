@@ -9,6 +9,7 @@ export function useCreateUser() {
   const createUser = async (userData) => {
     setLoading(true);
     setError(null);
+
     try {
       const response = await fetch('https://api.escuelajs.co/api/v1/users/', {
         method: 'POST',
@@ -21,13 +22,16 @@ export function useCreateUser() {
         }),
       });
       if (!response.ok) {
-        throw new Error(toast.error('Create an account fail'));
+        throw new Error('Create an account fail');
       }
       const result = await response.json();
       setData(result);
       toast.success('Create an account successfully');
+      return true;
     } catch (err) {
       setError(err.message);
+      toast.error(err.message);
+      return false;
     } finally {
       setLoading(false);
     }

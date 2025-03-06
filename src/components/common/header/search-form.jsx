@@ -1,18 +1,24 @@
-import { useState, useEffect } from "react";
-import { Search } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { Search } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const SearchForm = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    // Nếu vào trang chi tiết sản phẩm thì xóa từ khóa tìm kiếm
-    if (location.pathname.startsWith("")) {
-      setSearchTerm("");
+    // Lấy tham số title từ URL
+    const searchParams = new URLSearchParams(location.search);
+    const title = searchParams.get('title');
+
+    // Chỉ giữ lại searchTerm nếu URL chứa title, ngược lại reset
+    if (title) {
+      setSearchTerm(title);
+    } else {
+      setSearchTerm('');
     }
-  }, [location.pathname]);
+  }, [location.search]);
 
   const handleChange = (e) => {
     const value = e.target.value;

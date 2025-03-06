@@ -1,30 +1,35 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
-const useQueryProductsByTitle = () => {
+const useQueryProductsByTitle = (searchTerm) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const location = useLocation();
-
-  // Lấy title từ URL
-  const searchParams = new URLSearchParams(location.search);
-  const title = searchParams.get('title');
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(searchTerm);
 
   useEffect(() => {
-    if (!title) return;
+    const handler = setTimeout(() => {
+      setDebouncedSearchTerm(searchTerm);
+    }, 500);
+    return () => clearTimeout(handler);
+  }, [searchTerm]);
 
+  useEffect(() => {
+    if (debouncedSearchTerm === undefined) return;
     setLoading(true);
-    fetch(
-      `https://api.escuelajs.co/api/v1/products/?title=${encodeURIComponent(
-        title
-      )}`
-    )
+    setError(null);
+
+    const api = debouncedSearchTerm.trim()
+      ? `https://api.escuelajs.co/api/v1/products/?title=${encodeURIComponent(
+          debouncedSearchTerm
+        )}`
+      : `https://api.escuelajs.co/api/v1/products`;
+
+    fetch(api)
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => setError(err))
       .finally(() => setLoading(false));
-  }, [title]);
+  }, [debouncedSearchTerm]);
 
   return { products, loading, error };
 };

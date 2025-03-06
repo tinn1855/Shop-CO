@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import { Button } from '../../ui/button';
 import { useQueryProductsById } from '@/src/hooks/queries/use-query-products-by-id';
 import { useState } from 'react';
 import { cn } from '@/src/lib/utils';
@@ -11,7 +10,9 @@ export function GalleryProduct() {
   );
 
   const [selectedImage, setSelectedImage] = useState(0);
+
   if (!product) return <div>Loading...</div>;
+
   const thumbnails = product?.images?.slice(0, 3) || [];
 
   return (
@@ -39,12 +40,12 @@ export function GalleryProduct() {
         <img
           src={thumbnails[selectedImage] || product?.images?.[0]}
           alt={product?.title || 'Product Image'}
-          className="object-contain h-full duration-300 transition-transform ease-in-out"
+          className="object-contain h-full"
         />
       </div>
       <div className="lg:hidden grid grid-cols-3 gap-3 lg:gap-3.5">
         {thumbnails.map((thumb, index) => (
-          <Button
+          <button
             key={index}
             className={cn(
               'border rounded-xl overflow-hidden flex items-center justify-center bg-[#F0F0F0]',
@@ -57,7 +58,7 @@ export function GalleryProduct() {
               alt={`Thumbnail ${index + 1}`}
               className="object-contain"
             />
-          </Button>
+          </button>
         ))}
       </div>
     </div>

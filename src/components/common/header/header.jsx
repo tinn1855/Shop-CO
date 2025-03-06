@@ -41,6 +41,9 @@ export function Header() {
   const handleClickViewCart = () => {
     setIsOpenCart(false);
   };
+  const handleRedirect = () => {
+    navigate('/cart');
+  };
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -69,14 +72,14 @@ export function Header() {
             </div>
             <HoverCard open={isOpenCart} onOpenChange={setIsOpenCart}>
               <HoverCardTrigger>
-                <Link to="cart" className="relative">
+                <button onClick={handleRedirect} className="relative">
                   <ShoppingCart />
                   {totalProducts > 0 && (
                     <div className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 text-sm flex items-center justify-center  ">
                       <span className="text-xs">{displayCount}</span>
                     </div>
                   )}
-                </Link>
+                </button>
               </HoverCardTrigger>
               <HoverCardContent>
                 {totalProducts > 0 ? (
